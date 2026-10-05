@@ -1,0 +1,5 @@
+# TODO: replace the domain with your real website address
+User-agent: *
+Allow: /
+
+Sitemap: https://www.yourguesthouse.com/sitemap.xml

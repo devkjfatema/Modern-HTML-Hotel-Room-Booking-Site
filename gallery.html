@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Gallery — Your Guesthouse</title>
+  <meta name="description" content="Photos of the rooms, courtyard pool, garden and breakfast at Your Guesthouse.">
+  <meta name="theme-color" content="#ffffff">
+  <!-- TODO: replace the domain below with your real website address (also in sitemap.xml and robots.txt) -->
+  <link rel="canonical" href="https://www.yourguesthouse.com/gallery.html">
+
+  <!-- Social sharing (Facebook, WhatsApp, X) -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Your Guesthouse">
+  <meta property="og:title" content="Gallery — Your Guesthouse">
+  <meta property="og:description" content="Photos of the rooms, courtyard pool, garden and breakfast at Your Guesthouse.">
+  <meta property="og:url" content="https://www.yourguesthouse.com/gallery.html">
+  <meta property="og:image" content="https://www.yourguesthouse.com/images/hero-1.webp">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Gallery — Your Guesthouse">
+  <meta name="twitter:description" content="Photos of the rooms, courtyard pool, garden and breakfast at Your Guesthouse.">
+  <meta name="twitter:image" content="https://www.yourguesthouse.com/images/hero-1.webp">
+
+  <!-- Tells the stylesheet that JavaScript is on, so scroll animations can start hidden. If main.js ever fails, a CSS fallback shows everything after 2 seconds. -->
+  <script>document.documentElement.classList.add('js')</script>
+
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+
+  <!-- Fonts: Cormorant Garamond (headings) + Inter (text). To change fonts, edit this URL and --font-serif / --font-sans in css/style.css -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600&display=swap">
+  <link rel="stylesheet" href="css/style.css">
+  <!-- Loads the page-hero photo early so there is no blank flash -->
+  <link rel="preload" as="image" href="images/hero-gallery.webp" imagesrcset="images/hero-gallery-800.webp 800w, images/hero-gallery.webp 1376w" imagesizes="100vw" fetchpriority="high">
+  <script src="js/main.js" defer></script>
+</head>
+<body>
+<!-- Icons: one inline sprite, referenced everywhere with an svg use element -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+<symbol id="i-chevron-left" viewBox="0 0 24 24"><path d="m15 18-6-6 6-6" /></symbol>
+<symbol id="i-chevron-right" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6" /></symbol>
+<symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 12h16" /> <path d="M4 18h16" /> <path d="M4 6h16" /></symbol>
+<symbol id="i-whatsapp" viewBox="0 0 24 24"><path d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.03-.52-.07-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.21 3.08c.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.69.63.71.23 1.36.2 1.87.12.57-.08 1.76-.72 2-1.41.25-.7.25-1.29.17-1.41-.07-.13-.27-.2-.57-.35zM12.04 21.5h-.01a9.43 9.43 0 0 1-4.8-1.32l-.35-.2-3.57.93.95-3.48-.22-.36a9.4 9.4 0 0 1-1.44-5.02c0-5.2 4.24-9.43 9.45-9.43a9.38 9.38 0 0 1 6.68 2.77 9.37 9.37 0 0 1 2.76 6.67c0 5.2-4.24 9.44-9.45 9.44zm8.04-17.47A11.3 11.3 0 0 0 12.04.7C5.77.7.67 5.8.67 12.06c0 2 .52 3.96 1.52 5.68L.57 23.3l5.7-1.5a11.33 11.33 0 0 0 5.77 1.47h.01c6.26 0 11.36-5.1 11.37-11.37a11.3 11.3 0 0 0-3.34-8.04z"/></symbol>
+<symbol id="i-x" viewBox="0 0 24 24"><path d="M18 6 6 18" /> <path d="m6 6 12 12" /></symbol>
+</svg>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<!-- ===== HEADER (same on every page) ===== -->
+<header class="site-header site-header--home">
+  <div class="container site-header__bar">
+    <!-- TODO: replace "Your Guesthouse" with your guesthouse name (use Find &amp; Replace, see README) -->
+    <a class="logo" href="index.html">Your Guesthouse</a>
+
+    <nav class="main-nav" aria-label="Main">
+      <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="rooms.html">Rooms &amp; Amenities</a></li>
+          <li><a href="gallery.html" aria-current="page">Gallery</a></li>
+          <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+
+    <div class="header-actions">
+      <a class="btn btn-accent" href="contact.html#booking">Book Now</a>
+      <a class="icon-btn icon-btn--wa" href="https://wa.me/000000000001?text=Hello%2C%20I%27d%20like%20to%20check%20availability" target="_blank" rel="noopener noreferrer" aria-label="Message us on WhatsApp (opens in a new tab)"><svg class="icon icon--fill icon--lg" aria-hidden="true" focusable="false"><use href="#i-whatsapp"/></svg></a>
+      <button class="icon-btn menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-menu" aria-label="Open menu">
+        <svg class="icon icon--lg icon-open" aria-hidden="true" focusable="false"><use href="#i-menu"/></svg><svg class="icon icon--lg icon-close" aria-hidden="true" focusable="false"><use href="#i-x"/></svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile menu (opens with the hamburger button) -->
+  <div id="mobile-menu" class="mobile-menu">
+    <nav class="container" aria-label="Mobile">
+      <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="rooms.html">Rooms &amp; Amenities</a></li>
+          <li><a href="gallery.html" aria-current="page">Gallery</a></li>
+          <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <div class="mobile-menu__actions">
+        <a class="btn btn-accent" href="contact.html#booking">Book Now</a>
+        <a class="btn btn-whatsapp" href="https://wa.me/000000000001?text=Hello%2C%20I%27d%20like%20to%20check%20availability" target="_blank" rel="noopener noreferrer"><svg class="icon icon--fill" aria-hidden="true" focusable="false"><use href="#i-whatsapp"/></svg> WhatsApp Us</a>
+      </div>
+      <p class="mobile-menu__mail"><a href="mailto:hello@yourguesthouse.com">hello@yourguesthouse.com</a></p>
+    </nav>
+  </div>
+</header>
+
+<main id="main" tabindex="-1">
+    <!-- ===== PAGE HERO =====
+         To change the photo: replace images/hero-gallery.webp (and the small images/hero-gallery-800.webp), or edit the src below. -->
+    <section class="page-hero">
+      <div class="page-hero__media">
+        <img class="page-hero__img" src="images/hero-gallery.webp" srcset="images/hero-gallery-800.webp 800w, images/hero-gallery.webp 1376w" sizes="100vw" width="1376" height="768" alt="Two white sun loungers beside a long turquoise pool framed by palm trees" fetchpriority="high" decoding="async">
+      </div>
+      <div class="page-hero__overlay" aria-hidden="true"></div>
+      <div class="container page-hero__content">
+        <nav class="breadcrumb" data-reveal aria-label="Breadcrumb">
+          <ol>
+            <li><a href="index.html">Home</a></li>
+            <li><svg class="icon icon--sm" aria-hidden="true" focusable="false"><use href="#i-chevron-right"/></svg><span aria-current="page">Gallery</span></li>
+          </ol>
+        </nav>
+        <h1 data-reveal style="--d:120ms">Gallery</h1>
+        <p class="lead" data-reveal style="--d:240ms">The rooms, the garden and the small moments in between.</p>
+      </div>
+    </section>
+
+    <!-- ===== GALLERY =====
+         To add a photo: copy one <li>…</li> line, change data-category (rooms | pool-garden | dining),
+         data-caption, the image file name, width/height and alt text.
+         To remove a photo: delete its <li> line. -->
+    <section class="section bg-paper" aria-label="Photo gallery">
+      <div class="container">
+        <div class="filters" role="group" aria-label="Filter photos">
+        <button class="filter-btn" type="button" data-filter="all" aria-pressed="true">All</button>
+        <button class="filter-btn" type="button" data-filter="rooms" aria-pressed="false">Rooms</button>
+        <button class="filter-btn" type="button" data-filter="pool-garden" aria-pressed="false">Pool &amp; Garden</button>
+        <button class="filter-btn" type="button" data-filter="dining" aria-pressed="false">Dining</button>
+        </div>
+        <p id="gallery-status" class="sr-only" aria-live="polite"></p>
+
+        <ul class="masonry">
+        <li data-category="pool-garden" data-reveal><button type="button" data-caption="The courtyard and pool" aria-label="Open photo: The courtyard and pool"><img src="images/hero-1.webp" width="1376" height="768" alt="Whitewashed guesthouse with terracotta roofs around a turquoise courtyard pool and frangipani trees" loading="lazy" decoding="async"></button></li>
+        <li data-category="rooms" data-reveal style="--d:70ms"><button type="button" data-caption="Garden Room" aria-label="Open photo: Garden Room"><img src="images/room-garden.webp" width="1200" height="896" alt="Garden Room with a queen bed, green wool throw and glass doors open to a planted patio" loading="lazy" decoding="async"></button></li>
+        <li data-category="dining" data-reveal style="--d:140ms"><button type="button" data-caption="Fresh fruit at breakfast" aria-label="Open photo: Fresh fruit at breakfast"><img src="images/breakfast.webp" width="1024" height="1024" alt="Bowls of fresh mango, papaya and berries with yoghurt, granola and a cup of coffee" loading="lazy" decoding="async"></button></li>
+        <li data-category="pool-garden" data-reveal style="--d:210ms"><button type="button" data-caption="Poolside, late morning" aria-label="Open photo: Poolside, late morning"><img src="images/pool-detail.webp" width="896" height="1200" alt="Stone pool edge with palm-leaf shadows and a folded towel on a wooden lounger" loading="lazy" decoding="async"></button></li>
+        <li data-category="rooms" data-reveal><button type="button" data-caption="Deluxe Pool Room" aria-label="Open photo: Deluxe Pool Room"><img src="images/room-deluxe.webp" width="1200" height="896" alt="Deluxe Pool Room with a king bed, rattan pendant lamp and tall windows facing the pool" loading="lazy" decoding="async"></button></li>
+        <li data-category="pool-garden" data-reveal style="--d:70ms"><button type="button" data-caption="A hammock under the palms" aria-label="Open photo: A hammock under the palms"><img src="images/garden-hammock.webp" width="928" height="1152" alt="Cream cotton hammock strung between palms in dappled garden light" loading="lazy" decoding="async"></button></li>
+        <li data-category="rooms" data-reveal style="--d:140ms"><button type="button" data-caption="Stone basin and rain shower" aria-label="Open photo: Stone basin and rain shower"><img src="images/bathroom.webp" width="896" height="1200" alt="Bathroom with a stone basin on a wooden vanity, round mirror and rain shower with plants" loading="lazy" decoding="async"></button></li>
+        <li data-category="dining" data-reveal style="--d:210ms"><button type="button" data-caption="Breakfast on the terrace" aria-label="Open photo: Breakfast on the terrace"><img src="images/hero-4.webp" width="1376" height="768" alt="Breakfast of tropical fruit, coffee and croissants on a shaded wooden terrace table" loading="lazy" decoding="async"></button></li>
+        <li data-category="rooms" data-reveal><button type="button" data-caption="Family Suite" aria-label="Open photo: Family Suite"><img src="images/room-suite.webp" width="1200" height="896" alt="Family Suite with a king bed, separate linen sofa area and wooden ceiling beams" loading="lazy" decoding="async"></button></li>
+        <li data-category="dining" data-reveal style="--d:70ms"><button type="button" data-caption="Dinner in the courtyard" aria-label="Open photo: Dinner in the courtyard"><img src="images/dinner-courtyard.webp" width="896" height="1200" alt="Candlelit table for two under string lights in the garden courtyard" loading="lazy" decoding="async"></button></li>
+        <li data-category="pool-garden" data-reveal style="--d:140ms"><button type="button" data-caption="Loungers by the water" aria-label="Open photo: Loungers by the water"><img src="images/hero-3.webp" width="1376" height="768" alt="Two white sun loungers beside a clear garden pool framed by palm trees" loading="lazy" decoding="async"></button></li>
+        <li data-category="rooms" data-reveal style="--d:210ms"><button type="button" data-caption="The reading corner" aria-label="Open photo: The reading corner"><img src="images/reading-nook.webp" width="896" height="1200" alt="Reading corner with a linen armchair, books and a cup of tea by the window" loading="lazy" decoding="async"></button></li>
+        <li data-category="dining" data-reveal><button type="button" data-caption="Coffee on the balcony" aria-label="Open photo: Coffee on the balcony"><img src="images/terrace-coffee.webp" width="1024" height="1024" alt="Coffee and pastries on a wooden balcony rail overlooking the tropical garden" loading="lazy" decoding="async"></button></li>
+        <li data-category="rooms" data-reveal style="--d:70ms"><button type="button" data-caption="Suite balcony" aria-label="Open photo: Suite balcony"><img src="images/suite-balcony.webp" width="896" height="1200" alt="Private suite balcony with two woven chairs and potted palms looking over the garden" loading="lazy" decoding="async"></button></li>
+        <li data-category="pool-garden" data-reveal style="--d:140ms"><button type="button" data-caption="The fountain garden" aria-label="Open photo: The fountain garden"><img src="images/garden-palms.webp" width="1200" height="896" alt="Courtyard garden of palms and ferns around a small stone fountain" loading="lazy" decoding="async"></button></li>
+        <li data-category="rooms" data-reveal style="--d:210ms"><button type="button" data-caption="Ready for your arrival" aria-label="Open photo: Ready for your arrival"><img src="images/towels-detail.webp" width="928" height="1152" alt="Freshly made bed with folded white towels and a sprig of frangipani flowers" loading="lazy" decoding="async"></button></li>
+        <li data-category="dining" data-reveal><button type="button" data-caption="The shared table" aria-label="Open photo: The shared table"><img src="images/dining-table.webp" width="1200" height="896" alt="Long wooden communal table with rattan chairs in the open-air dining area" loading="lazy" decoding="async"></button></li>
+        <li data-category="pool-garden" data-reveal style="--d:70ms"><button type="button" data-caption="The garden path" aria-label="Open photo: The garden path"><img src="images/hero-5.webp" width="1376" height="768" alt="Stone path winding through a lush courtyard garden towards white guesthouse walls" loading="lazy" decoding="async"></button></li>
+        <li data-category="rooms" data-reveal style="--d:140ms"><button type="button" data-caption="Morning light" aria-label="Open photo: Morning light"><img src="images/hero-2.webp" width="1376" height="768" alt="Bright bedroom with white linen, a rattan headboard and sheer curtains open to the garden" loading="lazy" decoding="async"></button></li>
+        <li data-category="pool-garden" data-reveal style="--d:210ms"><button type="button" data-caption="Our front door" aria-label="Open photo: Our front door"><img src="images/intro-entrance.webp" width="928" height="1152" alt="Arched wooden entrance door flanked by olive trees in terracotta pots and bougainvillea" loading="lazy" decoding="async"></button></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ===== LIGHTBOX (opened by script) ===== -->
+    <div id="lightbox" class="lightbox" role="dialog" aria-modal="true" aria-labelledby="lightbox-caption" hidden>
+      <div class="lightbox__top">
+        <p class="lightbox__count" aria-live="polite"></p>
+        <button class="lightbox__btn lightbox__close" type="button" aria-label="Close photo viewer"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-x"/></svg></button>
+      </div>
+      <div class="lightbox__stage">
+        <img class="lightbox__img" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="">
+        <button class="lightbox__btn lightbox__side lightbox__side--prev lightbox__prev" type="button" aria-label="Previous photo"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-chevron-left"/></svg></button>
+        <button class="lightbox__btn lightbox__side lightbox__side--next lightbox__next" type="button" aria-label="Next photo"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-chevron-right"/></svg></button>
+      </div>
+      <div class="lightbox__bottom">
+        <button class="lightbox__btn lightbox__prev" type="button" aria-label="Previous photo"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-chevron-left"/></svg></button>
+        <p id="lightbox-caption" class="lightbox__caption"></p>
+        <button class="lightbox__btn lightbox__next" type="button" aria-label="Next photo"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-chevron-right"/></svg></button>
+      </div>
+    </div>
+</main>
+
+<!-- ===== FOOTER (same on every page) ===== -->
+<footer class="site-footer">
+  <div class="container site-footer__grid">
+    <div>
+      <a class="logo" href="index.html">Your Guesthouse</a>
+      <p class="site-footer__tagline">A small, quiet guesthouse with a garden, a pool and rooms full of light.</p>
+      <!-- TODO: replace the social links with your own profiles (or delete this list) -->
+      <ul class="site-footer__social">
+        <li><a class="footer-link" href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer">Instagram</a></li>
+        <li><a class="footer-link" href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer">Facebook</a></li>
+      </ul>
+    </div>
+
+    <nav aria-label="Footer">
+      <h2>Explore</h2>
+      <ul>
+          <li><a class="footer-link" href="index.html">Home</a></li>
+          <li><a class="footer-link" href="rooms.html">Rooms &amp; Amenities</a></li>
+          <li><a class="footer-link" href="gallery.html">Gallery</a></li>
+          <li><a class="footer-link" href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+
+    <div>
+      <h2>Contact</h2>
+      <address>
+        <span>123 Garden Lane</span>
+        <span>XXXXX Your Town</span>
+        <span>Your Region, Your Country</span>
+      </address>
+      <ul>
+        <li><a class="footer-link" href="mailto:hello@yourguesthouse.com">hello@yourguesthouse.com</a></li>
+        <li><a class="footer-link" href="tel:+000000000000">+00 000 000 0000</a></li>
+        <li><a class="footer-link" href="https://wa.me/000000000001?text=Hello%2C%20I%27d%20like%20to%20check%20availability" target="_blank" rel="noopener noreferrer">WhatsApp</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <h2>Your stay</h2>
+      <dl>
+        <div><dt>Check-in: </dt><dd>From 14:00</dd></div>
+        <div><dt>Check-out: </dt><dd>By 11:00</dd></div>
+        <div><dt>Reception: </dt><dd>Daily, 07:00 – 22:00</dd></div>
+      </dl>
+    </div>
+  </div>
+
+  <div class="site-footer__bottom">
+    <div class="container">
+      <p>© <span data-year>2026</span> Your Guesthouse. All rights reserved.</p>
+      <p><a href="mailto:hello@yourguesthouse.com">Questions? Write to us</a></p>
+    </div>
+  </div>
+</footer>
+
+<!-- ===== FLOATING WHATSAPP BUTTON ===== -->
+<a class="wa-float" href="https://wa.me/000000000001?text=Hello%2C%20I%27d%20like%20to%20check%20availability" target="_blank" rel="noopener noreferrer" aria-label="Chat with us on WhatsApp (opens in a new tab)"><svg class="icon icon--fill" aria-hidden="true" focusable="false"><use href="#i-whatsapp"/></svg></a>
+</body>
+</html>

@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Your Guesthouse — Boutique guesthouse with garden &amp; pool</title>
+  <meta name="description" content="Your Guesthouse is a small boutique guesthouse with light-filled rooms, a courtyard pool and breakfast included. Message us on WhatsApp or email to check availability.">
+  <meta name="theme-color" content="#ffffff">
+  <!-- TODO: replace the domain below with your real website address (also in sitemap.xml and robots.txt) -->
+  <link rel="canonical" href="https://www.yourguesthouse.com/">
+
+  <!-- Social sharing (Facebook, WhatsApp, X) -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Your Guesthouse">
+  <meta property="og:title" content="Your Guesthouse — Boutique guesthouse with garden &amp; pool">
+  <meta property="og:description" content="Your Guesthouse is a small boutique guesthouse with light-filled rooms, a courtyard pool and breakfast included. Message us on WhatsApp or email to check availability.">
+  <meta property="og:url" content="https://www.yourguesthouse.com/">
+  <meta property="og:image" content="https://www.yourguesthouse.com/images/hero-1.webp">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Your Guesthouse — Boutique guesthouse with garden &amp; pool">
+  <meta name="twitter:description" content="Your Guesthouse is a small boutique guesthouse with light-filled rooms, a courtyard pool and breakfast included. Message us on WhatsApp or email to check availability.">
+  <meta name="twitter:image" content="https://www.yourguesthouse.com/images/hero-1.webp">
+
+  <!-- Tells the stylesheet that JavaScript is on, so scroll animations can start hidden. If main.js ever fails, a CSS fallback shows everything after 2 seconds. -->
+  <script>document.documentElement.classList.add('js')</script>
+
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+
+  <!-- Fonts: Cormorant Garamond (headings) + Inter (text). To change fonts, edit this URL and --font-serif / --font-sans in css/style.css -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600&display=swap">
+  <link rel="stylesheet" href="css/style.css">
+  <!-- Loads the first hero photo as early as possible so there is no blank flash -->
+  <link rel="preload" as="image" href="images/hero-1.webp" imagesrcset="images/hero-1-800.webp 800w, images/hero-1.webp 1376w" imagesizes="100vw" fetchpriority="high">
+
+  <!-- Structured data for Google (LodgingBusiness). TODO: replace the placeholder values; no ratings or reviews are invented. -->
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LodgingBusiness",
+  "name": "Your Guesthouse",
+  "description": "A small, quiet guesthouse with a garden, a pool and rooms full of light.",
+  "url": "https://www.yourguesthouse.com",
+  "email": "hello@yourguesthouse.com",
+  "telephone": "+000000000000",
+  "image": [
+    "https://www.yourguesthouse.com/images/hero-1.webp",
+    "https://www.yourguesthouse.com/images/room-deluxe.webp"
+  ],
+  "checkinTime": "14:00",
+  "checkoutTime": "11:00",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "123 Garden Lane",
+    "addressLocality": "Your Town",
+    "addressRegion": "Your Region",
+    "postalCode": "XXXXX",
+    "addressCountry": "Your Country"
+  },
+  "amenityFeature": [
+    {
+      "@type": "LocationFeatureSpecification",
+      "name": "Free Wi-Fi",
+      "value": true
+    },
+    {
+      "@type": "LocationFeatureSpecification",
+      "name": "Breakfast included",
+      "value": true
+    },
+    {
+      "@type": "LocationFeatureSpecification",
+      "name": "Air conditioning",
+      "value": true
+    },
+    {
+      "@type": "LocationFeatureSpecification",
+      "name": "Courtyard pool",
+      "value": true
+    },
+    {
+      "@type": "LocationFeatureSpecification",
+      "name": "Free parking",
+      "value": true
+    },
+    {
+      "@type": "LocationFeatureSpecification",
+      "name": "Daily housekeeping",
+      "value": true
+    },
+    {
+      "@type": "LocationFeatureSpecification",
+      "name": "Airport transfer",
+      "value": true
+    },
+    {
+      "@type": "LocationFeatureSpecification",
+      "name": "Laundry service",
+      "value": true
+    },
+    {
+      "@type": "LocationFeatureSpecification",
+      "name": "Reception",
+      "value": true
+    },
+    {
+      "@type": "LocationFeatureSpecification",
+      "name": "Bicycles to borrow",
+      "value": true
+    },
+    {
+      "@type": "LocationFeatureSpecification",
+      "name": "In-room safe",
+      "value": true
+    },
+    {
+      "@type": "LocationFeatureSpecification",
+      "name": "Tropical garden",
+      "value": true
+    }
+  ],
+  "sameAs": [
+    "https://www.instagram.com/",
+    "https://www.facebook.com/"
+  ]
+}
+  </script>
+  <script src="js/main.js" defer></script>
+</head>
+<body>
+<!-- Icons: one inline sprite, referenced everywhere with an svg use element -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+<symbol id="i-air-vent" viewBox="0 0 24 24"><path d="M18 17.5a2.5 2.5 0 1 1-4 2.03V12" /> <path d="M6 12H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2" /> <path d="M6 8h12" /> <path d="M6.6 15.572A2 2 0 1 0 10 17v-5" /></symbol>
+<symbol id="i-arrow-right" viewBox="0 0 24 24"><path d="M5 12h14" /> <path d="m12 5 7 7-7 7" /></symbol>
+<symbol id="i-calendar" viewBox="0 0 24 24"><path d="M8 2v4" /> <path d="M16 2v4" /> <rect width="18" height="18" x="3" y="4" rx="2" /> <path d="M3 10h18" /></symbol>
+<symbol id="i-car" viewBox="0 0 24 24"><path d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H5c-.6 0-1.1.4-1.4.9l-1.4 2.9A3.7 3.7 0 0 0 2 12v4c0 .6.4 1 1 1h2" /> <circle cx="7" cy="17" r="2" /> <path d="M9 17h6" /> <circle cx="17" cy="17" r="2" /></symbol>
+<symbol id="i-chevron-left" viewBox="0 0 24 24"><path d="m15 18-6-6 6-6" /></symbol>
+<symbol id="i-chevron-right" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6" /></symbol>
+<symbol id="i-coffee" viewBox="0 0 24 24"><path d="M10 2v2" /> <path d="M14 2v2" /> <path d="M16 8a1 1 0 0 1 1 1v8a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4V9a1 1 0 0 1 1-1h14a4 4 0 1 1 0 8h-1" /> <path d="M6 2v2" /></symbol>
+<symbol id="i-concierge-bell" viewBox="0 0 24 24"><path d="M3 20a1 1 0 0 1-1-1v-1a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v1a1 1 0 0 1-1 1Z" /> <path d="M20 16a8 8 0 1 0-16 0" /> <path d="M12 4v4" /> <path d="M10 4h4" /></symbol>
+<symbol id="i-mail" viewBox="0 0 24 24"><path d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7" /> <rect x="2" y="4" width="20" height="16" rx="2" /></symbol>
+<symbol id="i-maximize" viewBox="0 0 24 24"><path d="M8 3H5a2 2 0 0 0-2 2v3" /> <path d="M21 8V5a2 2 0 0 0-2-2h-3" /> <path d="M3 16v3a2 2 0 0 0 2 2h3" /> <path d="M16 21h3a2 2 0 0 0 2-2v-3" /></symbol>
+<symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 12h16" /> <path d="M4 18h16" /> <path d="M4 6h16" /></symbol>
+<symbol id="i-pause" viewBox="0 0 24 24"><rect x="14" y="4" width="4" height="16" rx="1" /> <rect x="6" y="4" width="4" height="16" rx="1" /></symbol>
+<symbol id="i-play" viewBox="0 0 24 24"><polygon points="6 3 20 12 6 21 6 3" /></symbol>
+<symbol id="i-search" viewBox="0 0 24 24"><path d="m21 21-4.34-4.34" /> <circle cx="11" cy="11" r="8" /></symbol>
+<symbol id="i-sparkles" viewBox="0 0 24 24"><path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z" /> <path d="M20 3v4" /> <path d="M22 5h-4" /> <path d="M4 17v2" /> <path d="M5 18H3" /></symbol>
+<symbol id="i-tv" viewBox="0 0 24 24"><path d="m17 2-5 5-5-5" /> <rect width="20" height="15" x="2" y="7" rx="2" /></symbol>
+<symbol id="i-users" viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" /> <path d="M16 3.128a4 4 0 0 1 0 7.744" /> <path d="M22 21v-2a4 4 0 0 0-3-3.87" /> <circle cx="9" cy="7" r="4" /></symbol>
+<symbol id="i-waves" viewBox="0 0 24 24"><path d="M2 6c.6.5 1.2 1 2.5 1C7 7 7 5 9.5 5c2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1" /> <path d="M2 12c.6.5 1.2 1 2.5 1 2.5 0 2.5-2 5-2 2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1" /> <path d="M2 18c.6.5 1.2 1 2.5 1 2.5 0 2.5-2 5-2 2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1" /></symbol>
+<symbol id="i-whatsapp" viewBox="0 0 24 24"><path d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.03-.52-.07-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.21 3.08c.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.69.63.71.23 1.36.2 1.87.12.57-.08 1.76-.72 2-1.41.25-.7.25-1.29.17-1.41-.07-.13-.27-.2-.57-.35zM12.04 21.5h-.01a9.43 9.43 0 0 1-4.8-1.32l-.35-.2-3.57.93.95-3.48-.22-.36a9.4 9.4 0 0 1-1.44-5.02c0-5.2 4.24-9.43 9.45-9.43a9.38 9.38 0 0 1 6.68 2.77 9.37 9.37 0 0 1 2.76 6.67c0 5.2-4.24 9.44-9.45 9.44zm8.04-17.47A11.3 11.3 0 0 0 12.04.7C5.77.7.67 5.8.67 12.06c0 2 .52 3.96 1.52 5.68L.57 23.3l5.7-1.5a11.33 11.33 0 0 0 5.77 1.47h.01c6.26 0 11.36-5.1 11.37-11.37a11.3 11.3 0 0 0-3.34-8.04z"/></symbol>
+<symbol id="i-wifi" viewBox="0 0 24 24"><path d="M12 20h.01" /> <path d="M2 8.82a15 15 0 0 1 20 0" /> <path d="M5 12.859a10 10 0 0 1 14 0" /> <path d="M8.5 16.429a5 5 0 0 1 7 0" /></symbol>
+<symbol id="i-x" viewBox="0 0 24 24"><path d="M18 6 6 18" /> <path d="m6 6 12 12" /></symbol>
+</svg>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<!-- ===== HEADER (same on every page) ===== -->
+<header class="site-header site-header--home">
+  <div class="container site-header__bar">
+    <!-- TODO: replace "Your Guesthouse" with your guesthouse name (use Find &amp; Replace, see README) -->
+    <a class="logo" href="index.html">Your Guesthouse</a>
+
+    <nav class="main-nav" aria-label="Main">
+      <ul>
+          <li><a href="index.html" aria-current="page">Home</a></li>
+          <li><a href="rooms.html">Rooms &amp; Amenities</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+
+    <div class="header-actions">
+      <a class="btn btn-accent" href="contact.html#booking">Book Now</a>
+      <a class="icon-btn icon-btn--wa" href="https://wa.me/000000000001?text=Hello%2C%20I%27d%20like%20to%20check%20availability" target="_blank" rel="noopener noreferrer" aria-label="Message us on WhatsApp (opens in a new tab)"><svg class="icon icon--fill icon--lg" aria-hidden="true" focusable="false"><use href="#i-whatsapp"/></svg></a>
+      <button class="icon-btn menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-menu" aria-label="Open menu">
+        <svg class="icon icon--lg icon-open" aria-hidden="true" focusable="false"><use href="#i-menu"/></svg><svg class="icon icon--lg icon-close" aria-hidden="true" focusable="false"><use href="#i-x"/></svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile menu (opens with the hamburger button) -->
+  <div id="mobile-menu" class="mobile-menu">
+    <nav class="container" aria-label="Mobile">
+      <ul>
+          <li><a href="index.html" aria-current="page">Home</a></li>
+          <li><a href="rooms.html">Rooms &amp; Amenities</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <div class="mobile-menu__actions">
+        <a class="btn btn-accent" href="contact.html#booking">Book Now</a>
+        <a class="btn btn-whatsapp" href="https://wa.me/000000000001?text=Hello%2C%20I%27d%20like%20to%20check%20availability" target="_blank" rel="noopener noreferrer"><svg class="icon icon--fill" aria-hidden="true" focusable="false"><use href="#i-whatsapp"/></svg> WhatsApp Us</a>
+      </div>
+      <p class="mobile-menu__mail"><a href="mailto:hello@yourguesthouse.com">hello@yourguesthouse.com</a></p>
+    </nav>
+  </div>
+</header>
+
+<main id="main" tabindex="-1">
+    <!-- ===== HERO SLIDER =====
+         5 full-screen photos. Timing / zoom are set in js/main.js (HERO block).
+         To change a photo: replace the file in /images, or edit the src below. Edit data-label for the small caption. -->
+    <section class="hero hero--bar" aria-roledescription="carousel" aria-label="Photos of Your Guesthouse">
+      <div class="hero__slides">
+        <div class="hero__slide" role="group" aria-roledescription="slide" aria-label="1 of 5: The courtyard pool" data-label="The courtyard pool" style="--origin: 50% 60%">
+          <img src="images/hero-1.webp" srcset="images/hero-1-800.webp 800w, images/hero-1.webp 1376w" sizes="100vw" width="1376" height="768" alt="Whitewashed guesthouse with terracotta roofs around a turquoise courtyard pool and frangipani trees" fetchpriority="high" decoding="async">
+        </div>
+        <div class="hero__slide" role="group" aria-roledescription="slide" aria-label="2 of 5: Loungers in the garden" data-label="Loungers in the garden" style="--origin: 40% 50%">
+          <img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="images/hero-3.webp" data-srcset="images/hero-3-800.webp 800w, images/hero-3.webp 1376w" sizes="100vw" width="1376" height="768" alt="Two white sun loungers beside a clear garden pool framed by palm trees" decoding="async">
+        </div>
+        <div class="hero__slide" role="group" aria-roledescription="slide" aria-label="3 of 5: A light-filled bedroom" data-label="A light-filled bedroom" style="--origin: 55% 45%">
+          <img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="images/hero-2.webp" data-srcset="images/hero-2-800.webp 800w, images/hero-2.webp 1376w" sizes="100vw" width="1376" height="768" alt="Bright bedroom with white linen, a rattan headboard and sheer curtains open to the garden" decoding="async">
+        </div>
+        <div class="hero__slide" role="group" aria-roledescription="slide" aria-label="4 of 5: Breakfast on the terrace" data-label="Breakfast on the terrace" style="--origin: 50% 55%">
+          <img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="images/hero-4.webp" data-srcset="images/hero-4-800.webp 800w, images/hero-4.webp 1376w" sizes="100vw" width="1376" height="768" alt="Breakfast of tropical fruit, coffee and croissants on a shaded wooden terrace table" decoding="async">
+        </div>
+        <div class="hero__slide" role="group" aria-roledescription="slide" aria-label="5 of 5: The garden path" data-label="The garden path" style="--origin: 50% 40%">
+          <img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="images/hero-5.webp" data-srcset="images/hero-5-800.webp 800w, images/hero-5.webp 1376w" sizes="100vw" width="1376" height="768" alt="Stone path winding through a lush courtyard garden towards white guesthouse walls" decoding="async">
+        </div>
+      </div>
+      <div class="hero__overlay" aria-hidden="true"></div>
+
+      <div class="hero__content">
+        <div class="container">
+          <div class="hero__text">
+            <h1 data-reveal>A quiet garden stay, made personal.</h1>
+            <p class="hero__sub" data-reveal style="--d:150ms">Light-filled rooms, a pool in the courtyard and breakfast under the trees — at Your Guesthouse.</p>
+            <div class="btn-row" data-reveal style="--d:300ms">
+              <a class="btn btn-accent" href="contact.html#booking">Book Now</a>
+              <a class="btn btn-whatsapp" href="https://wa.me/000000000001?text=Hello%2C%20I%27d%20like%20to%20check%20availability" target="_blank" rel="noopener noreferrer"><svg class="icon icon--fill" aria-hidden="true" focusable="false"><use href="#i-whatsapp"/></svg> WhatsApp Us</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero__controls">
+        <div class="container">
+          <p class="hero__caption" aria-hidden="true"></p>
+          <div class="hero__nav">
+            <div class="hero__dots" role="group" aria-label="Choose slide"></div>
+            <button class="hero__pause" type="button" aria-pressed="false" aria-label="Pause slideshow">
+              <svg class="icon icon--sm icon-pause" aria-hidden="true" focusable="false"><use href="#i-pause"/></svg><svg class="icon icon--sm icon-play" aria-hidden="true" focusable="false"><use href="#i-play"/></svg>
+            </button>
+          </div>
+        </div>
+      </div>
+      <p class="sr-only hero__live" aria-live="off"></p>
+    </section>
+
+    <!-- ===== AVAILABILITY BAR =====
+         No backend: "Check Availability" opens the Contact page with these dates filled in (see js/main.js, section 5b). -->
+    <div class="availability" data-reveal style="--d:700ms">
+      <div class="container">
+        <form id="availability-form" class="availability__card" novalidate aria-labelledby="availability-title">
+          <h2 id="availability-title" class="sr-only">Check availability</h2>
+          <div class="availability__field">
+            <label for="avail-checkin"><svg class="icon icon--sm" aria-hidden="true" focusable="false"><use href="#i-calendar"/></svg> Check-in</label>
+            <input class="control" type="date" id="avail-checkin" name="checkin" required aria-describedby="avail-error">
+          </div>
+          <div class="availability__field">
+            <label for="avail-checkout"><svg class="icon icon--sm" aria-hidden="true" focusable="false"><use href="#i-calendar"/></svg> Check-out</label>
+            <input class="control" type="date" id="avail-checkout" name="checkout" required aria-describedby="avail-error">
+          </div>
+          <div class="availability__field availability__field--guests">
+            <label for="avail-guests"><svg class="icon icon--sm" aria-hidden="true" focusable="false"><use href="#i-users"/></svg> Guests</label>
+            <select class="control" id="avail-guests" name="guests">
+              <option value="1">1 Guest</option>
+              <option value="2" selected>2 Guests</option>
+              <option value="3">3 Guests</option>
+              <option value="4">4 Guests</option>
+              <option value="5">5 Guests</option>
+              <option value="6">6 Guests</option>
+            </select>
+          </div>
+          <button class="btn btn-accent availability__btn" type="submit"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-search"/></svg> Check Availability</button>
+          <p id="avail-error" class="availability__error" aria-live="polite"></p>
+        </form>
+      </div>
+    </div>
+
+    <!-- ===== WELCOME ===== -->
+    <section class="section bg-paper" aria-labelledby="welcome-heading">
+      <div class="container welcome">
+        <div class="welcome__text" data-reveal>
+          <h2 id="welcome-heading" class="heading-2 heading--line" data-reveal>Welcome to Your Guesthouse</h2>
+          <p class="lead mt-6">We are a small guesthouse with only a handful of rooms, set around a garden courtyard and a quiet pool. It feels more like staying with friends than checking into a hotel.</p>
+          <p class="lead mt-4">Mornings begin with breakfast on the terrace; afternoons are for the pool, a book or the town nearby. Ask us anything — we live here and love sharing it.</p>
+          <a class="text-link mt-6" href="rooms.html">See the rooms <svg class="icon icon--sm" aria-hidden="true" focusable="false"><use href="#i-arrow-right"/></svg></a>
+        </div>
+        <div class="welcome__media" data-reveal style="--d:150ms">
+          <img class="welcome__img" src="images/intro-entrance.webp" width="928" height="1152" alt="Arched wooden entrance door flanked by olive trees in terracotta pots and bougainvillea" loading="lazy" decoding="async">
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== HIGHLIGHTS ===== -->
+    <!-- <section class="highlights" aria-labelledby="highlights-heading">
+      <h2 id="highlights-heading" class="sr-only">What every stay includes</h2>
+      <ul class="container">
+        <li data-reveal>
+          <svg class="icon icon--thin" aria-hidden="true" focusable="false"><use href="#i-coffee"/></svg>
+          <div><h3>Breakfast included</h3><p>Fresh fruit, eggs and good coffee every morning.</p></div>
+        </li>
+        <li data-reveal style="--d:100ms">
+          <svg class="icon icon--thin" aria-hidden="true" focusable="false"><use href="#i-wifi"/></svg>
+          <div><h3>Free Wi-Fi</h3><p>A steady connection in every room and the garden.</p></div>
+        </li>
+        <li data-reveal style="--d:200ms">
+          <svg class="icon icon--thin" aria-hidden="true" focusable="false"><use href="#i-waves"/></svg>
+          <div><h3>Courtyard pool</h3><p>A quiet place to swim and read between outings.</p></div>
+        </li>
+        <li data-reveal style="--d:300ms">
+          <svg class="icon icon--thin" aria-hidden="true" focusable="false"><use href="#i-concierge-bell"/></svg>
+          <div><h3>A personal welcome</h3><p>We greet you ourselves and help plan your days.</p></div>
+        </li>
+      </ul>
+    </section> -->
+
+    <!-- ===== FEATURED ROOMS (edit the room details in rooms.html too) ===== -->
+    <section class="section bg-paper" aria-labelledby="rooms-heading">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <h2 id="rooms-heading" class="heading-2 heading--line" data-reveal>Three rooms, each its own</h2>
+            <p class="lead mt-3">Pick the garden, the pool or a little more space.</p>
+          </div>
+          <a class="text-link" href="rooms.html">All rooms &amp; amenities <svg class="icon icon--sm" aria-hidden="true" focusable="false"><use href="#i-arrow-right"/></svg></a>
+        </div>
+        <ul class="room-cards">
+        <li data-reveal>
+          <article class="room-card">
+            <a class="room-card__img-link" href="rooms.html#garden-room" tabindex="-1" aria-hidden="true"><img src="images/room-garden.webp" width="1200" height="896" alt="" loading="lazy" decoding="async"></a>
+            <h3 class="heading-3">Garden Room</h3>
+            <p class="room-card__summary">Quiet and green, opening straight onto the garden.</p>
+            <p class="room-card__meta">
+              <span><svg class="icon icon--sm icon--muted" aria-hidden="true" focusable="false"><use href="#i-maximize"/></svg>22 m²</span>
+              <span><svg class="icon icon--sm icon--muted" aria-hidden="true" focusable="false"><use href="#i-users"/></svg>2 guests</span>
+            </p>
+            <a class="text-link" href="rooms.html#garden-room" aria-label="View room: Garden Room">View room <svg class="icon icon--sm" aria-hidden="true" focusable="false"><use href="#i-arrow-right"/></svg></a>
+          </article>
+        </li>
+        <li data-reveal style="--d:120ms">
+          <article class="room-card">
+            <a class="room-card__img-link" href="rooms.html#deluxe-pool-room" tabindex="-1" aria-hidden="true"><img src="images/room-deluxe.webp" width="1200" height="896" alt="" loading="lazy" decoding="async"></a>
+            <h3 class="heading-3">Deluxe Pool Room <span class="badge">Most popular</span></h3>
+            <p class="room-card__summary">Our most-asked-for room, a few steps from the water.</p>
+            <p class="room-card__meta">
+              <span><svg class="icon icon--sm icon--muted" aria-hidden="true" focusable="false"><use href="#i-maximize"/></svg>30 m²</span>
+              <span><svg class="icon icon--sm icon--muted" aria-hidden="true" focusable="false"><use href="#i-users"/></svg>2 guests</span>
+            </p>
+            <a class="text-link" href="rooms.html#deluxe-pool-room" aria-label="View room: Deluxe Pool Room">View room <svg class="icon icon--sm" aria-hidden="true" focusable="false"><use href="#i-arrow-right"/></svg></a>
+          </article>
+        </li>
+        <li data-reveal style="--d:240ms">
+          <article class="room-card">
+            <a class="room-card__img-link" href="rooms.html#family-suite" tabindex="-1" aria-hidden="true"><img src="images/room-suite.webp" width="1200" height="896" alt="" loading="lazy" decoding="async"></a>
+            <h3 class="heading-3">Family Suite</h3>
+            <p class="room-card__summary">Room for everyone, with a balcony over the garden.</p>
+            <p class="room-card__meta">
+              <span><svg class="icon icon--sm icon--muted" aria-hidden="true" focusable="false"><use href="#i-maximize"/></svg>45 m²</span>
+              <span><svg class="icon icon--sm icon--muted" aria-hidden="true" focusable="false"><use href="#i-users"/></svg>Up to 4 guests</span>
+            </p>
+            <a class="text-link" href="rooms.html#family-suite" aria-label="View room: Family Suite">View room <svg class="icon icon--sm" aria-hidden="true" focusable="false"><use href="#i-arrow-right"/></svg></a>
+          </article>
+        </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ===== RATES AT A GLANCE =====
+         TODO: keep these prices the same as the table in rooms.html (section "RATES"). Replace "On request" with your price, e.g. "€95". -->
+    <section class="section bg-mist" aria-labelledby="home-rates-heading">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <h2 id="home-rates-heading" class="heading-2 heading--line" data-reveal>Rates at a glance</h2>
+            <p class="lead mt-3">Rates change with the season — message us your dates for an exact price.</p>
+          </div>
+          <a class="text-link" href="rooms.html#rates">View full rates <svg class="icon icon--sm" aria-hidden="true" focusable="false"><use href="#i-arrow-right"/></svg></a>
+        </div>
+        <div class="rates-wrap" data-reveal>
+          <table class="rates-table">
+            <caption class="sr-only">Room rates per night</caption>
+            <thead>
+              <tr>
+                <th scope="col">Room</th>
+                <th scope="col">Guests</th>
+                <th scope="col">Bed</th>
+                <th scope="col">From, per night</th>
+                <th scope="col"><span class="sr-only">Ask about this room</span></th>
+              </tr>
+            </thead>
+            <tbody>
+            <tr data-reveal>
+              <th scope="row" class="room-name">Garden Room</th>
+              <td data-label="Guests">2 guests</td>
+              <td data-label="Bed">Queen bed</td>
+              <td data-label="From, per night" class="price">On request</td>
+              <td class="rates-action"><a class="btn btn-outline btn-sm" href="https://wa.me/000000000001?text=Hello%2C%20I%27d%20like%20to%20know%20today%27s%20rate%20for%20the%20Garden%20Room%20at%20Your%20Guesthouse." target="_blank" rel="noopener noreferrer"><svg class="icon icon--fill" aria-hidden="true" focusable="false"><use href="#i-whatsapp"/></svg> Ask for today’s rate</a></td>
+            </tr>
+            <tr data-reveal style="--d:80ms">
+              <th scope="row" class="room-name">Deluxe Pool Room <span class="badge">Most popular</span></th>
+              <td data-label="Guests">2 guests</td>
+              <td data-label="Bed">King bed</td>
+              <td data-label="From, per night" class="price">On request</td>
+              <td class="rates-action"><a class="btn btn-outline btn-sm" href="https://wa.me/000000000001?text=Hello%2C%20I%27d%20like%20to%20know%20today%27s%20rate%20for%20the%20Deluxe%20Pool%20Room%20at%20Your%20Guesthouse." target="_blank" rel="noopener noreferrer"><svg class="icon icon--fill" aria-hidden="true" focusable="false"><use href="#i-whatsapp"/></svg> Ask for today’s rate</a></td>
+            </tr>
+            <tr data-reveal style="--d:160ms">
+              <th scope="row" class="room-name">Family Suite</th>
+              <td data-label="Guests">Up to 4 guests</td>
+              <td data-label="Bed">King bed + sofa bed</td>
+              <td data-label="From, per night" class="price">On request</td>
+              <td class="rates-action"><a class="btn btn-outline btn-sm" href="https://wa.me/000000000001?text=Hello%2C%20I%27d%20like%20to%20know%20today%27s%20rate%20for%20the%20Family%20Suite%20at%20Your%20Guesthouse." target="_blank" rel="noopener noreferrer"><svg class="icon icon--fill" aria-hidden="true" focusable="false"><use href="#i-whatsapp"/></svg> Ask for today’s rate</a></td>
+            </tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="rates-note">Breakfast &amp; Wi-Fi included. Book direct for our best rate.</p>
+      </div>
+    </section>
+
+    <!-- ===== AMENITIES CAROUSEL =====
+         Swipe or use the arrow buttons. To change an item, edit its <li>. Full list lives on rooms.html. -->
+    <section class="section bg-paper" aria-labelledby="home-amenities-heading">
+      <div class="container" data-carousel>
+        <div class="section-head">
+          <h2 id="home-amenities-heading" class="heading-2 heading--line" data-reveal>Amenities crafted for comfort</h2>
+          <div class="carousel__arrows">
+            <button class="carousel__btn" type="button" data-carousel-prev aria-label="Previous amenities"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-chevron-left"/></svg></button>
+            <button class="carousel__btn" type="button" data-carousel-next aria-label="Next amenities"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-chevron-right"/></svg></button>
+          </div>
+        </div>
+        <ul class="carousel__track" tabindex="0" role="region" aria-label="Amenities, scroll sideways">
+          <li class="amenity-card" data-reveal>
+            <div class="amenity-card__inner">
+              <span class="amenity-card__icon"><svg class="icon icon--lg icon--thin" aria-hidden="true" focusable="false"><use href="#i-wifi"/></svg></span>
+              <h3>Free Wi-Fi</h3>
+              <span class="amenity-card__line" aria-hidden="true"></span>
+            </div>
+          </li>
+          <li class="amenity-card" data-reveal style="--d:70ms">
+            <div class="amenity-card__inner">
+              <span class="amenity-card__icon"><svg class="icon icon--lg icon--thin" aria-hidden="true" focusable="false"><use href="#i-air-vent"/></svg></span>
+              <h3>Air conditioning</h3>
+              <span class="amenity-card__line" aria-hidden="true"></span>
+            </div>
+          </li>
+          <li class="amenity-card" data-reveal style="--d:140ms">
+            <div class="amenity-card__inner">
+              <span class="amenity-card__icon"><svg class="icon icon--lg icon--thin" aria-hidden="true" focusable="false"><use href="#i-tv"/></svg></span>
+              <h3>TV</h3>
+              <span class="amenity-card__line" aria-hidden="true"></span>
+            </div>
+          </li>
+          <li class="amenity-card" data-reveal style="--d:210ms">
+            <div class="amenity-card__inner">
+              <span class="amenity-card__icon"><svg class="icon icon--lg icon--thin" aria-hidden="true" focusable="false"><use href="#i-concierge-bell"/></svg></span>
+              <h3>24-hour front desk</h3>
+              <span class="amenity-card__line" aria-hidden="true"></span>
+            </div>
+          </li>
+          <li class="amenity-card" data-reveal style="--d:280ms">
+            <div class="amenity-card__inner">
+              <span class="amenity-card__icon"><svg class="icon icon--lg icon--thin" aria-hidden="true" focusable="false"><use href="#i-coffee"/></svg></span>
+              <h3>Breakfast</h3>
+              <span class="amenity-card__line" aria-hidden="true"></span>
+            </div>
+          </li>
+          <li class="amenity-card" data-reveal style="--d:350ms">
+            <div class="amenity-card__inner">
+              <span class="amenity-card__icon"><svg class="icon icon--lg icon--thin" aria-hidden="true" focusable="false"><use href="#i-waves"/></svg></span>
+              <h3>Pool</h3>
+              <span class="amenity-card__line" aria-hidden="true"></span>
+            </div>
+          </li>
+          <li class="amenity-card" data-reveal style="--d:420ms">
+            <div class="amenity-card__inner">
+              <span class="amenity-card__icon"><svg class="icon icon--lg icon--thin" aria-hidden="true" focusable="false"><use href="#i-car"/></svg></span>
+              <h3>Parking</h3>
+              <span class="amenity-card__line" aria-hidden="true"></span>
+            </div>
+          </li>
+          <li class="amenity-card" data-reveal style="--d:490ms">
+            <div class="amenity-card__inner">
+              <span class="amenity-card__icon"><svg class="icon icon--lg icon--thin" aria-hidden="true" focusable="false"><use href="#i-sparkles"/></svg></span>
+              <h3>Housekeeping</h3>
+              <span class="amenity-card__line" aria-hidden="true"></span>
+            </div>
+          </li>
+        </ul>
+        <a class="text-link mt-4" href="rooms.html#amenities">See all amenities <svg class="icon icon--sm" aria-hidden="true" focusable="false"><use href="#i-arrow-right"/></svg></a>
+      </div>
+    </section>
+
+    <!-- ===== GALLERY PREVIEW (6 photos) ===== -->
+    <section class="section bg-mist" aria-labelledby="gallery-heading">
+      <div class="container">
+        <div class="section-head">
+          <h2 id="gallery-heading" class="heading-2 heading--line" data-reveal>A look around</h2>
+          <a class="text-link" href="gallery.html">View the full gallery <svg class="icon icon--sm" aria-hidden="true" focusable="false"><use href="#i-arrow-right"/></svg></a>
+        </div>
+        <ul class="preview-grid">
+          <li data-reveal><a href="gallery.html" aria-label="Loungers by the water — open the gallery"><img src="images/hero-3.webp" width="1376" height="768" alt="Two white sun loungers beside a clear garden pool framed by palm trees" loading="lazy" decoding="async"></a></li>
+          <li data-reveal style="--d:80ms"><a href="gallery.html" aria-label="Deluxe Pool Room — open the gallery"><img src="images/room-deluxe.webp" width="1200" height="896" alt="Deluxe Pool Room with a king bed, rattan pendant lamp and tall windows facing the pool" loading="lazy" decoding="async"></a></li>
+          <li data-reveal style="--d:160ms"><a href="gallery.html" aria-label="Fresh fruit at breakfast — open the gallery"><img src="images/breakfast.webp" width="1024" height="1024" alt="Bowls of fresh mango, papaya and berries with yoghurt, granola and a cup of coffee" loading="lazy" decoding="async"></a></li>
+          <li data-reveal style="--d:240ms"><a href="gallery.html" aria-label="A hammock under the palms — open the gallery"><img src="images/garden-hammock.webp" width="928" height="1152" alt="Cream cotton hammock strung between palms in dappled garden light" loading="lazy" decoding="async"></a></li>
+          <li data-reveal style="--d:320ms"><a href="gallery.html" aria-label="Stone basin and rain shower — open the gallery"><img src="images/bathroom.webp" width="896" height="1200" alt="Bathroom with a stone basin on a wooden vanity, round mirror and rain shower with plants" loading="lazy" decoding="async"></a></li>
+          <li data-reveal style="--d:400ms"><a href="gallery.html" aria-label="Dinner in the courtyard — open the gallery"><img src="images/dinner-courtyard.webp" width="896" height="1200" alt="Candlelit table for two under string lights in the garden courtyard" loading="lazy" decoding="async"></a></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ===== CALL TO ACTION ===== -->
+    <section class="cta" aria-labelledby="cta-heading">
+      <div class="container cta__inner">
+        <div class="cta__text" data-reveal>
+          <h2 id="cta-heading" class="heading-2">Tell us your dates and we’ll reply personally.</h2>
+          <p class="lead mt-3">No booking engine, no forms to fight — just a message to Your Guesthouse.</p>
+        </div>
+        <div class="btn-row" data-reveal style="--d:150ms">
+          <a class="btn btn-outline" href="mailto:hello@yourguesthouse.com?subject=Availability%20request%20%E2%80%93%20Your%20Guesthouse"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-mail"/></svg> Email us</a>
+          <a class="btn btn-whatsapp" href="https://wa.me/000000000001?text=Hello%2C%20I%27d%20like%20to%20check%20availability" target="_blank" rel="noopener noreferrer"><svg class="icon icon--fill" aria-hidden="true" focusable="false"><use href="#i-whatsapp"/></svg> WhatsApp Us</a>
+        </div>
+      </div>
+    </section>
+</main>
+
+<!-- ===== FOOTER (same on every page) ===== -->
+<footer class="site-footer">
+  <div class="container site-footer__grid">
+    <div>
+      <a class="logo" href="index.html">Your Guesthouse</a>
+      <p class="site-footer__tagline">A small, quiet guesthouse with a garden, a pool and rooms full of light.</p>
+      <!-- TODO: replace the social links with your own profiles (or delete this list) -->
+      <ul class="site-footer__social">
+        <li><a class="footer-link" href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer">Instagram</a></li>
+        <li><a class="footer-link" href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer">Facebook</a></li>
+      </ul>
+    </div>
+
+    <nav aria-label="Footer">
+      <h2>Explore</h2>
+      <ul>
+          <li><a class="footer-link" href="index.html">Home</a></li>
+          <li><a class="footer-link" href="rooms.html">Rooms &amp; Amenities</a></li>
+          <li><a class="footer-link" href="gallery.html">Gallery</a></li>
+          <li><a class="footer-link" href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+
+    <div>
+      <h2>Contact</h2>
+      <address>
+        <span>123 Garden Lane</span>
+        <span>XXXXX Your Town</span>
+        <span>Your Region, Your Country</span>
+      </address>
+      <ul>
+        <li><a class="footer-link" href="mailto:hello@yourguesthouse.com">hello@yourguesthouse.com</a></li>
+        <li><a class="footer-link" href="tel:+000000000000">+00 000 000 0000</a></li>
+        <li><a class="footer-link" href="https://wa.me/000000000001?text=Hello%2C%20I%27d%20like%20to%20check%20availability" target="_blank" rel="noopener noreferrer">WhatsApp</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <h2>Your stay</h2>
+      <dl>
+        <div><dt>Check-in: </dt><dd>From 14:00</dd></div>
+        <div><dt>Check-out: </dt><dd>By 11:00</dd></div>
+        <div><dt>Reception: </dt><dd>Daily, 07:00 – 22:00</dd></div>
+      </dl>
+    </div>
+  </div>
+
+  <div class="site-footer__bottom">
+    <div class="container">
+      <p>© <span data-year>2026</span> Your Guesthouse. All rights reserved.</p>
+      <p><a href="mailto:hello@yourguesthouse.com">Questions? Write to us</a></p>
+    </div>
+  </div>
+</footer>
+
+<!-- ===== FLOATING WHATSAPP BUTTON ===== -->
+<a class="wa-float" href="https://wa.me/000000000001?text=Hello%2C%20I%27d%20like%20to%20check%20availability" target="_blank" rel="noopener noreferrer" aria-label="Chat with us on WhatsApp (opens in a new tab)"><svg class="icon icon--fill" aria-hidden="true" focusable="false"><use href="#i-whatsapp"/></svg></a>
+</body>
+</html>

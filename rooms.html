@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Rooms &amp; Amenities — Your Guesthouse</title>
+  <meta name="description" content="Explore the Garden Room, Deluxe Pool Room and Family Suite at Your Guesthouse, plus amenities, rates and house information.">
+  <meta name="theme-color" content="#ffffff">
+  <!-- TODO: replace the domain below with your real website address (also in sitemap.xml and robots.txt) -->
+  <link rel="canonical" href="https://www.yourguesthouse.com/rooms.html">
+
+  <!-- Social sharing (Facebook, WhatsApp, X) -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Your Guesthouse">
+  <meta property="og:title" content="Rooms &amp; Amenities — Your Guesthouse">
+  <meta property="og:description" content="Explore the Garden Room, Deluxe Pool Room and Family Suite at Your Guesthouse, plus amenities, rates and house information.">
+  <meta property="og:url" content="https://www.yourguesthouse.com/rooms.html">
+  <meta property="og:image" content="https://www.yourguesthouse.com/images/room-deluxe.webp">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Rooms &amp; Amenities — Your Guesthouse">
+  <meta name="twitter:description" content="Explore the Garden Room, Deluxe Pool Room and Family Suite at Your Guesthouse, plus amenities, rates and house information.">
+  <meta name="twitter:image" content="https://www.yourguesthouse.com/images/room-deluxe.webp">
+
+  <!-- Tells the stylesheet that JavaScript is on, so scroll animations can start hidden. If main.js ever fails, a CSS fallback shows everything after 2 seconds. -->
+  <script>document.documentElement.classList.add('js')</script>
+
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+
+  <!-- Fonts: Cormorant Garamond (headings) + Inter (text). To change fonts, edit this URL and --font-serif / --font-sans in css/style.css -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600&display=swap">
+  <link rel="stylesheet" href="css/style.css">
+  <!-- Loads the page-hero photo early so there is no blank flash -->
+  <link rel="preload" as="image" href="images/hero-rooms.webp" imagesrcset="images/hero-rooms-800.webp 800w, images/hero-rooms.webp 1376w" imagesizes="100vw" fetchpriority="high">
+  <script src="js/main.js" defer></script>
+</head>
+<body>
+<!-- Icons: one inline sprite, referenced everywhere with an svg use element -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+<symbol id="i-air-vent" viewBox="0 0 24 24"><path d="M18 17.5a2.5 2.5 0 1 1-4 2.03V12" /> <path d="M6 12H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2" /> <path d="M6 8h12" /> <path d="M6.6 15.572A2 2 0 1 0 10 17v-5" /></symbol>
+<symbol id="i-bath" viewBox="0 0 24 24"><path d="M10 4 8 6" /> <path d="M17 19v2" /> <path d="M2 12h20" /> <path d="M7 19v2" /> <path d="M9 5 7.621 3.621A2.121 2.121 0 0 0 4 5v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-5" /></symbol>
+<symbol id="i-bed-double" viewBox="0 0 24 24"><path d="M2 20v-8a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v8" /> <path d="M4 10V6a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v4" /> <path d="M12 4v6" /> <path d="M2 18h20" /></symbol>
+<symbol id="i-bike" viewBox="0 0 24 24"><circle cx="18.5" cy="17.5" r="3.5" /> <circle cx="5.5" cy="17.5" r="3.5" /> <circle cx="15" cy="5" r="1" /> <path d="M12 17.5V14l-3-3 4-3 2 3h2" /></symbol>
+<symbol id="i-car" viewBox="0 0 24 24"><path d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H5c-.6 0-1.1.4-1.4.9l-1.4 2.9A3.7 3.7 0 0 0 2 12v4c0 .6.4 1 1 1h2" /> <circle cx="7" cy="17" r="2" /> <path d="M9 17h6" /> <circle cx="17" cy="17" r="2" /></symbol>
+<symbol id="i-chevron-right" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6" /></symbol>
+<symbol id="i-coffee" viewBox="0 0 24 24"><path d="M10 2v2" /> <path d="M14 2v2" /> <path d="M16 8a1 1 0 0 1 1 1v8a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4V9a1 1 0 0 1 1-1h14a4 4 0 1 1 0 8h-1" /> <path d="M6 2v2" /></symbol>
+<symbol id="i-concierge-bell" viewBox="0 0 24 24"><path d="M3 20a1 1 0 0 1-1-1v-1a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v1a1 1 0 0 1-1 1Z" /> <path d="M20 16a8 8 0 1 0-16 0" /> <path d="M12 4v4" /> <path d="M10 4h4" /></symbol>
+<symbol id="i-door-open" viewBox="0 0 24 24"><path d="M11 20H2" /> <path d="M11 4.562v16.157a1 1 0 0 0 1.242.97L19 20V5.562a2 2 0 0 0-1.515-1.94l-4-1A2 2 0 0 0 11 4.561z" /> <path d="M11 4H8a2 2 0 0 0-2 2v14" /> <path d="M14 12h.01" /> <path d="M22 20h-3" /></symbol>
+<symbol id="i-lock" viewBox="0 0 24 24"><rect width="18" height="11" x="3" y="11" rx="2" ry="2" /> <path d="M7 11V7a5 5 0 0 1 10 0v4" /></symbol>
+<symbol id="i-mail" viewBox="0 0 24 24"><path d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7" /> <rect x="2" y="4" width="20" height="16" rx="2" /></symbol>
+<symbol id="i-maximize" viewBox="0 0 24 24"><path d="M8 3H5a2 2 0 0 0-2 2v3" /> <path d="M21 8V5a2 2 0 0 0-2-2h-3" /> <path d="M3 16v3a2 2 0 0 0 2 2h3" /> <path d="M16 21h3a2 2 0 0 0 2-2v-3" /></symbol>
+<symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 12h16" /> <path d="M4 18h16" /> <path d="M4 6h16" /></symbol>
+<symbol id="i-plane" viewBox="0 0 24 24"><path d="M17.8 19.2 16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.2c.4-.3.6-.7.5-1.2z" /></symbol>
+<symbol id="i-refrigerator" viewBox="0 0 24 24"><path d="M5 6a4 4 0 0 1 4-4h6a4 4 0 0 1 4 4v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6Z" /> <path d="M5 10h14" /> <path d="M15 7v6" /></symbol>
+<symbol id="i-shirt" viewBox="0 0 24 24"><path d="M20.38 3.46 16 2a4 4 0 0 1-8 0L3.62 3.46a2 2 0 0 0-1.34 2.23l.58 3.47a1 1 0 0 0 .99.84H6v10c0 1.1.9 2 2 2h8a2 2 0 0 0 2-2V10h2.15a1 1 0 0 0 .99-.84l.58-3.47a2 2 0 0 0-1.34-2.23z" /></symbol>
+<symbol id="i-shower-head" viewBox="0 0 24 24"><path d="m4 4 2.5 2.5" /> <path d="M13.5 6.5a4.95 4.95 0 0 0-7 7" /> <path d="M15 5 5 15" /> <path d="M14 17v.01" /> <path d="M10 16v.01" /> <path d="M13 13v.01" /> <path d="M16 10v.01" /> <path d="M11 20v.01" /> <path d="M17 14v.01" /> <path d="M20 11v.01" /></symbol>
+<symbol id="i-sofa" viewBox="0 0 24 24"><path d="M20 9V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v3" /> <path d="M2 16a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-5a2 2 0 0 0-4 0v1.5a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5V11a2 2 0 0 0-4 0z" /> <path d="M4 18v2" /> <path d="M20 18v2" /> <path d="M12 4v9" /></symbol>
+<symbol id="i-sparkles" viewBox="0 0 24 24"><path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z" /> <path d="M20 3v4" /> <path d="M22 5h-4" /> <path d="M4 17v2" /> <path d="M5 18H3" /></symbol>
+<symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4" /> <path d="M12 2v2" /> <path d="M12 20v2" /> <path d="m4.93 4.93 1.41 1.41" /> <path d="m17.66 17.66 1.41 1.41" /> <path d="M2 12h2" /> <path d="M20 12h2" /> <path d="m6.34 17.66-1.41 1.41" /> <path d="m19.07 4.93-1.41 1.41" /></symbol>
+<symbol id="i-tree-palm" viewBox="0 0 24 24"><path d="M13 8c0-2.76-2.46-5-5.5-5S2 5.24 2 8h2l1-1 1 1h4" /> <path d="M13 7.14A5.82 5.82 0 0 1 16.5 6c3.04 0 5.5 2.24 5.5 5h-3l-1-1-1 1h-3" /> <path d="M5.89 9.71c-2.15 2.15-2.3 5.47-.35 7.43l4.24-4.25.7-.7.71-.71 2.12-2.12c-1.95-1.96-5.27-1.8-7.42.35" /> <path d="M11 15.5c.5 2.5-.17 4.5-1 6.5h4c2-5.5-.5-12-1-14" /></symbol>
+<symbol id="i-users" viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" /> <path d="M16 3.128a4 4 0 0 1 0 7.744" /> <path d="M22 21v-2a4 4 0 0 0-3-3.87" /> <circle cx="9" cy="7" r="4" /></symbol>
+<symbol id="i-waves" viewBox="0 0 24 24"><path d="M2 6c.6.5 1.2 1 2.5 1C7 7 7 5 9.5 5c2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1" /> <path d="M2 12c.6.5 1.2 1 2.5 1 2.5 0 2.5-2 5-2 2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1" /> <path d="M2 18c.6.5 1.2 1 2.5 1 2.5 0 2.5-2 5-2 2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1" /></symbol>
+<symbol id="i-whatsapp" viewBox="0 0 24 24"><path d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.03-.52-.07-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.21 3.08c.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.69.63.71.23 1.36.2 1.87.12.57-.08 1.76-.72 2-1.41.25-.7.25-1.29.17-1.41-.07-.13-.27-.2-.57-.35zM12.04 21.5h-.01a9.43 9.43 0 0 1-4.8-1.32l-.35-.2-3.57.93.95-3.48-.22-.36a9.4 9.4 0 0 1-1.44-5.02c0-5.2 4.24-9.43 9.45-9.43a9.38 9.38 0 0 1 6.68 2.77 9.37 9.37 0 0 1 2.76 6.67c0 5.2-4.24 9.44-9.45 9.44zm8.04-17.47A11.3 11.3 0 0 0 12.04.7C5.77.7.67 5.8.67 12.06c0 2 .52 3.96 1.52 5.68L.57 23.3l5.7-1.5a11.33 11.33 0 0 0 5.77 1.47h.01c6.26 0 11.36-5.1 11.37-11.37a11.3 11.3 0 0 0-3.34-8.04z"/></symbol>
+<symbol id="i-wifi" viewBox="0 0 24 24"><path d="M12 20h.01" /> <path d="M2 8.82a15 15 0 0 1 20 0" /> <path d="M5 12.859a10 10 0 0 1 14 0" /> <path d="M8.5 16.429a5 5 0 0 1 7 0" /></symbol>
+<symbol id="i-x" viewBox="0 0 24 24"><path d="M18 6 6 18" /> <path d="m6 6 12 12" /></symbol>
+</svg>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<!-- ===== HEADER (same on every page) ===== -->
+<header class="site-header site-header--home">
+  <div class="container site-header__bar">
+    <!-- TODO: replace "Your Guesthouse" with your guesthouse name (use Find &amp; Replace, see README) -->
+    <a class="logo" href="index.html">Your Guesthouse</a>
+
+    <nav class="main-nav" aria-label="Main">
+      <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="rooms.html" aria-current="page">Rooms &amp; Amenities</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+
+    <div class="header-actions">
+      <a class="btn btn-accent" href="contact.html#booking">Book Now</a>
+      <a class="icon-btn icon-btn--wa" href="https://wa.me/000000000001?text=Hello%2C%20I%27d%20like%20to%20check%20availability" target="_blank" rel="noopener noreferrer" aria-label="Message us on WhatsApp (opens in a new tab)"><svg class="icon icon--fill icon--lg" aria-hidden="true" focusable="false"><use href="#i-whatsapp"/></svg></a>
+      <button class="icon-btn menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-menu" aria-label="Open menu">
+        <svg class="icon icon--lg icon-open" aria-hidden="true" focusable="false"><use href="#i-menu"/></svg><svg class="icon icon--lg icon-close" aria-hidden="true" focusable="false"><use href="#i-x"/></svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile menu (opens with the hamburger button) -->
+  <div id="mobile-menu" class="mobile-menu">
+    <nav class="container" aria-label="Mobile">
+      <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="rooms.html" aria-current="page">Rooms &amp; Amenities</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <div class="mobile-menu__actions">
+        <a class="btn btn-accent" href="contact.html#booking">Book Now</a>
+        <a class="btn btn-whatsapp" href="https://wa.me/000000000001?text=Hello%2C%20I%27d%20like%20to%20check%20availability" target="_blank" rel="noopener noreferrer"><svg class="icon icon--fill" aria-hidden="true" focusable="false"><use href="#i-whatsapp"/></svg> WhatsApp Us</a>
+      </div>
+      <p class="mobile-menu__mail"><a href="mailto:hello@yourguesthouse.com">hello@yourguesthouse.com</a></p>
+    </nav>
+  </div>
+</header>
+
+<main id="main" tabindex="-1">
+    <!-- ===== PAGE HERO =====
+         To change the photo: replace images/hero-rooms.webp (and the small images/hero-rooms-800.webp), or edit the src below. -->
+    <section class="page-hero">
+      <div class="page-hero__media">
+        <img class="page-hero__img" src="images/hero-rooms.webp" srcset="images/hero-rooms-800.webp 800w, images/hero-rooms.webp 1376w" sizes="100vw" width="1376" height="768" alt="Bright bedroom with white linen, a rattan headboard and a tall window onto the tropical garden" fetchpriority="high" decoding="async">
+      </div>
+      <div class="page-hero__overlay" aria-hidden="true"></div>
+      <div class="container page-hero__content">
+        <nav class="breadcrumb" data-reveal aria-label="Breadcrumb">
+          <ol>
+            <li><a href="index.html">Home</a></li>
+            <li><svg class="icon icon--sm" aria-hidden="true" focusable="false"><use href="#i-chevron-right"/></svg><span aria-current="page">Rooms &amp; Amenities</span></li>
+          </ol>
+        </nav>
+        <h1 data-reveal style="--d:120ms">Rooms &amp; Amenities</h1>
+        <p class="lead" data-reveal style="--d:240ms">Three rooms, each with its own character, and everything included to make your stay easy.</p>
+      </div>
+    </section>
+
+    <!-- ===== ROOMS =====
+         To edit a room: change the name, size, text and feature list inside its <article>.
+         To add a room: copy a whole <article>…</article> block and give it a new id. -->
+    <section class="section bg-paper" aria-label="Our rooms">
+      <div class="container room-list">
+        <article id="garden-room" class="room-block" data-reveal aria-labelledby="garden-room-title">
+          <div class="room-block__media">
+            <img class="room-block__img" src="images/room-garden.webp" width="1200" height="896" alt="Garden Room with a queen bed, green wool throw and glass doors open to a planted patio" loading="lazy" decoding="async">
+          </div>
+          <div class="room-block__text">
+            <h2 id="garden-room-title" class="heading-2">Garden Room</h2>
+            <dl class="room-block__facts">
+              <div><svg class="icon icon--sm icon--muted" aria-hidden="true" focusable="false"><use href="#i-maximize"/></svg><dt>Size</dt><dd>22 m²</dd></div>
+              <div><svg class="icon icon--sm icon--muted" aria-hidden="true" focusable="false"><use href="#i-users"/></svg><dt>Guests</dt><dd>2 guests</dd></div>
+              <div><svg class="icon icon--sm icon--muted" aria-hidden="true" focusable="false"><use href="#i-bed-double"/></svg><dt>Bed</dt><dd>Queen bed</dd></div>
+            </dl>
+            <p class="lead">Glass doors open onto a private patio among the plants, so mornings start with birdsong and coffee outside. Simple, calm and ideal for couples who like to wander.</p>
+            <h3 class="sr-only">In the room</h3>
+            <ul class="feature-list">
+            <li><svg class="icon icon--thin icon--accent" aria-hidden="true" focusable="false"><use href="#i-door-open"/></svg>Private garden patio</li>
+            <li><svg class="icon icon--thin icon--accent" aria-hidden="true" focusable="false"><use href="#i-shower-head"/></svg>Rain shower</li>
+            <li><svg class="icon icon--thin icon--accent" aria-hidden="true" focusable="false"><use href="#i-air-vent"/></svg>Air conditioning</li>
+            <li><svg class="icon icon--thin icon--accent" aria-hidden="true" focusable="false"><use href="#i-wifi"/></svg>Free Wi-Fi</li>
+            <li><svg class="icon icon--thin icon--accent" aria-hidden="true" focusable="false"><use href="#i-refrigerator"/></svg>Mini fridge</li>
+            <li><svg class="icon icon--thin icon--accent" aria-hidden="true" focusable="false"><use href="#i-lock"/></svg>In-room safe</li>
+            </ul>
+            <div class="btn-row">
+              <a class="btn btn-whatsapp" href="https://wa.me/000000000001?text=Hello%2C%20I%27d%20like%20to%20enquire%20about%20the%20Garden%20Room%20at%20Your%20Guesthouse." target="_blank" rel="noopener noreferrer"><svg class="icon icon--fill" aria-hidden="true" focusable="false"><use href="#i-whatsapp"/></svg> Enquire about this room</a>
+              <a class="btn btn-outline" href="mailto:hello@yourguesthouse.com?subject=Enquiry%3A%20Garden%20Room&body=Hello%2C%20I%27d%20like%20to%20enquire%20about%20the%20Garden%20Room%20at%20Your%20Guesthouse."><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-mail"/></svg> Email us</a>
+            </div>
+          </div>
+        </article>
+        <article id="deluxe-pool-room" class="room-block room-block--reverse" data-reveal aria-labelledby="deluxe-pool-room-title">
+          <div class="room-block__media">
+            <img class="room-block__img" src="images/room-deluxe.webp" width="1200" height="896" alt="Deluxe Pool Room with a king bed, rattan pendant lamp and tall windows facing the pool" loading="lazy" decoding="async">
+          </div>
+          <div class="room-block__text">
+            <h2 id="deluxe-pool-room-title" class="heading-2">Deluxe Pool Room</h2>
+            <dl class="room-block__facts">
+              <div><svg class="icon icon--sm icon--muted" aria-hidden="true" focusable="false"><use href="#i-maximize"/></svg><dt>Size</dt><dd>30 m²</dd></div>
+              <div><svg class="icon icon--sm icon--muted" aria-hidden="true" focusable="false"><use href="#i-users"/></svg><dt>Guests</dt><dd>2 guests</dd></div>
+              <div><svg class="icon icon--sm icon--muted" aria-hidden="true" focusable="false"><use href="#i-bed-double"/></svg><dt>Bed</dt><dd>King bed</dd></div>
+            </dl>
+            <p class="lead">Tall windows look straight onto the courtyard pool, and a reading chair catches the afternoon light. More space to spread out, with a generous king bed.</p>
+            <h3 class="sr-only">In the room</h3>
+            <ul class="feature-list">
+            <li><svg class="icon icon--thin icon--accent" aria-hidden="true" focusable="false"><use href="#i-waves"/></svg>Pool view</li>
+            <li><svg class="icon icon--thin icon--accent" aria-hidden="true" focusable="false"><use href="#i-bath"/></svg>Shower and bathtub</li>
+            <li><svg class="icon icon--thin icon--accent" aria-hidden="true" focusable="false"><use href="#i-air-vent"/></svg>Air conditioning</li>
+            <li><svg class="icon icon--thin icon--accent" aria-hidden="true" focusable="false"><use href="#i-wifi"/></svg>Free Wi-Fi</li>
+            <li><svg class="icon icon--thin icon--accent" aria-hidden="true" focusable="false"><use href="#i-sofa"/></svg>Reading chair</li>
+            <li><svg class="icon icon--thin icon--accent" aria-hidden="true" focusable="false"><use href="#i-refrigerator"/></svg>Mini fridge</li>
+            </ul>
+            <div class="btn-row">
+              <a class="btn btn-whatsapp" href="https://wa.me/000000000001?text=Hello%2C%20I%27d%20like%20to%20enquire%20about%20the%20Deluxe%20Pool%20Room%20at%20Your%20Guesthouse." target="_blank" rel="noopener noreferrer"><svg class="icon icon--fill" aria-hidden="true" focusable="false"><use href="#i-whatsapp"/></svg> Enquire about this room</a>
+              <a class="btn btn-outline" href="mailto:hello@yourguesthouse.com?subject=Enquiry%3A%20Deluxe%20Pool%20Room&body=Hello%2C%20I%27d%20like%20to%20enquire%20about%20the%20Deluxe%20Pool%20Room%20at%20Your%20Guesthouse."><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-mail"/></svg> Email us</a>
+            </div>
+          </div>
+        </article>
+        <article id="family-suite" class="room-block" data-reveal aria-labelledby="family-suite-title">
+          <div class="room-block__media">
+            <img class="room-block__img" src="images/room-suite.webp" width="1200" height="896" alt="Family Suite with a king bed, separate linen sofa area and wooden ceiling beams" loading="lazy" decoding="async">
+          </div>
+          <div class="room-block__text">
+            <h2 id="family-suite-title" class="heading-2">Family Suite</h2>
+            <dl class="room-block__facts">
+              <div><svg class="icon icon--sm icon--muted" aria-hidden="true" focusable="false"><use href="#i-maximize"/></svg><dt>Size</dt><dd>45 m²</dd></div>
+              <div><svg class="icon icon--sm icon--muted" aria-hidden="true" focusable="false"><use href="#i-users"/></svg><dt>Guests</dt><dd>Up to 4 guests</dd></div>
+              <div><svg class="icon icon--sm icon--muted" aria-hidden="true" focusable="false"><use href="#i-bed-double"/></svg><dt>Bed</dt><dd>King bed + sofa bed</dd></div>
+            </dl>
+            <p class="lead">A bedroom and separate sitting area under wooden beams, with a private balcony above the garden. Comfortable for families or friends travelling together.</p>
+            <h3 class="sr-only">In the room</h3>
+            <ul class="feature-list">
+            <li><svg class="icon icon--thin icon--accent" aria-hidden="true" focusable="false"><use href="#i-sun"/></svg>Private balcony</li>
+            <li><svg class="icon icon--thin icon--accent" aria-hidden="true" focusable="false"><use href="#i-sofa"/></svg>Separate sitting area</li>
+            <li><svg class="icon icon--thin icon--accent" aria-hidden="true" focusable="false"><use href="#i-bath"/></svg>Shower and bathtub</li>
+            <li><svg class="icon icon--thin icon--accent" aria-hidden="true" focusable="false"><use href="#i-air-vent"/></svg>Air conditioning</li>
+            <li><svg class="icon icon--thin icon--accent" aria-hidden="true" focusable="false"><use href="#i-wifi"/></svg>Free Wi-Fi</li>
+            <li><svg class="icon icon--thin icon--accent" aria-hidden="true" focusable="false"><use href="#i-refrigerator"/></svg>Mini fridge</li>
+            </ul>
+            <div class="btn-row">
+              <a class="btn btn-whatsapp" href="https://wa.me/000000000001?text=Hello%2C%20I%27d%20like%20to%20enquire%20about%20the%20Family%20Suite%20at%20Your%20Guesthouse." target="_blank" rel="noopener noreferrer"><svg class="icon icon--fill" aria-hidden="true" focusable="false"><use href="#i-whatsapp"/></svg> Enquire about this room</a>
+              <a class="btn btn-outline" href="mailto:hello@yourguesthouse.com?subject=Enquiry%3A%20Family%20Suite&body=Hello%2C%20I%27d%20like%20to%20enquire%20about%20the%20Family%20Suite%20at%20Your%20Guesthouse."><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-mail"/></svg> Email us</a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ===== AMENITIES ===== -->
+    <section id="amenities" class="section amenities bg-mist" aria-labelledby="amenities-heading">
+      <div class="container">
+        <h2 id="amenities-heading" class="heading-2 heading--line" data-reveal>Amenities</h2>
+        <p class="lead mt-3">Everything you need, nothing you don’t. All included in your stay unless noted.</p>
+        <ul class="amenity-grid">
+          <li data-reveal>
+            <span class="amenity-icon"><svg class="icon icon--thin" aria-hidden="true" focusable="false"><use href="#i-wifi"/></svg></span>
+            <div><h3>Free Wi-Fi</h3><p>Fast, reliable Wi-Fi in every room and the garden.</p></div>
+          </li>
+          <li data-reveal style="--d:80ms">
+            <span class="amenity-icon"><svg class="icon icon--thin" aria-hidden="true" focusable="false"><use href="#i-coffee"/></svg></span>
+            <div><h3>Breakfast included</h3><p>Served on the terrace each morning, made fresh.</p></div>
+          </li>
+          <li data-reveal style="--d:160ms">
+            <span class="amenity-icon"><svg class="icon icon--thin" aria-hidden="true" focusable="false"><use href="#i-air-vent"/></svg></span>
+            <div><h3>Air conditioning</h3><p>Quiet, individually controlled in every room.</p></div>
+          </li>
+          <li data-reveal style="--d:240ms">
+            <span class="amenity-icon"><svg class="icon icon--thin" aria-hidden="true" focusable="false"><use href="#i-waves"/></svg></span>
+            <div><h3>Courtyard pool</h3><p>Loungers, towels and shade from the palms.</p></div>
+          </li>
+          <li data-reveal>
+            <span class="amenity-icon"><svg class="icon icon--thin" aria-hidden="true" focusable="false"><use href="#i-car"/></svg></span>
+            <div><h3>Free parking</h3><p>On-site parking for guests, subject to space.</p></div>
+          </li>
+          <li data-reveal style="--d:80ms">
+            <span class="amenity-icon"><svg class="icon icon--thin" aria-hidden="true" focusable="false"><use href="#i-sparkles"/></svg></span>
+            <div><h3>Daily housekeeping</h3><p>Fresh towels and a tidy room every day.</p></div>
+          </li>
+          <li data-reveal style="--d:160ms">
+            <span class="amenity-icon"><svg class="icon icon--thin" aria-hidden="true" focusable="false"><use href="#i-plane"/></svg></span>
+            <div><h3>Airport transfer</h3><p>Arranged on request — just ask when you book.</p></div>
+          </li>
+          <li data-reveal style="--d:240ms">
+            <span class="amenity-icon"><svg class="icon icon--thin" aria-hidden="true" focusable="false"><use href="#i-shirt"/></svg></span>
+            <div><h3>Laundry service</h3><p>Washed, dried and folded, usually same day.</p></div>
+          </li>
+          <li data-reveal>
+            <span class="amenity-icon"><svg class="icon icon--thin" aria-hidden="true" focusable="false"><use href="#i-concierge-bell"/></svg></span>
+            <div><h3>Reception</h3><p>Open daily, 07:00 – 22:00.</p></div>
+          </li>
+          <li data-reveal style="--d:80ms">
+            <span class="amenity-icon"><svg class="icon icon--thin" aria-hidden="true" focusable="false"><use href="#i-bike"/></svg></span>
+            <div><h3>Bicycles to borrow</h3><p>Explore the neighbourhood at your own pace.</p></div>
+          </li>
+          <li data-reveal style="--d:160ms">
+            <span class="amenity-icon"><svg class="icon icon--thin" aria-hidden="true" focusable="false"><use href="#i-lock"/></svg></span>
+            <div><h3>In-room safe</h3><p>For passports, laptops and valuables.</p></div>
+          </li>
+          <li data-reveal style="--d:240ms">
+            <span class="amenity-icon"><svg class="icon icon--thin" aria-hidden="true" focusable="false"><use href="#i-tree-palm"/></svg></span>
+            <div><h3>Tropical garden</h3><p>Hammocks, quiet corners and plenty of shade.</p></div>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ===== RATES (PRICING TABLE) =====
+         TODO: replace each "On request" with your nightly price, e.g. "€95" or "$110".
+         Keep the text inside <td data-label="Price per night" class="price">…</td>.
+         On phones each row turns into a stacked card automatically. -->
+    <section id="rates" class="section bg-paper" aria-labelledby="rates-heading">
+      <div class="container">
+        <div style="max-width:42rem">
+          <h2 id="rates-heading" class="heading-2 heading--line" data-reveal>Rates</h2>
+          <p class="lead mt-3">Rates change with the season — message us your dates for an exact price.</p>
+        </div>
+        <div class="rates-wrap" data-reveal>
+          <table class="rates-table">
+            <caption class="sr-only">Room rates per night</caption>
+            <thead>
+              <tr>
+                <th scope="col">Room</th>
+                <th scope="col">Size</th>
+                <th scope="col">Guests</th>
+                <th scope="col">Bed</th>
+                <th scope="col">Price per night</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row" class="room-name">Garden Room</th>
+                <td data-label="Size">22 m²</td>
+                <td data-label="Guests">2 guests</td>
+                <td data-label="Bed">Queen bed</td>
+                <td data-label="Price per night" class="price">On request</td>
+              </tr>
+              <tr>
+                <th scope="row" class="room-name">Deluxe Pool Room</th>
+                <td data-label="Size">30 m²</td>
+                <td data-label="Guests">2 guests</td>
+                <td data-label="Bed">King bed</td>
+                <td data-label="Price per night" class="price">On request</td>
+              </tr>
+              <tr>
+                <th scope="row" class="room-name">Family Suite</th>
+                <td data-label="Size">45 m²</td>
+                <td data-label="Guests">Up to 4 guests</td>
+                <td data-label="Bed">King bed + sofa bed</td>
+                <td data-label="Price per night" class="price">On request</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="rates-note">Breakfast &amp; Wi-Fi included. Check-in from 14:00 · Check-out by 11:00.</p>
+      </div>
+    </section>
+
+    <!-- ===== GOOD TO KNOW (policies) - TODO: replace with your own ===== -->
+    <section class="section bg-mist" aria-labelledby="policies-heading">
+      <div class="container policies">
+        <h2 id="policies-heading" class="heading-2 heading--line" data-reveal>Good to know</h2>
+        <dl class="policy-list">
+          <div><dt>Check-in &amp; check-out</dt><dd>Check-in from 14:00, check-out by 11:00. Early arrival? Leave your bags with us.</dd></div>
+          <div><dt>Children</dt><dd>Children of all ages are welcome. Cots are available on request.</dd></div>
+          <div><dt>Pets</dt><dd>We are unable to host pets, with the exception of assistance animals.</dd></div>
+          <div><dt>Deposit &amp; cancellation</dt><dd>Add your deposit and cancellation terms here.</dd></div>
+        </dl>
+      </div>
+    </section>
+</main>
+
+<!-- ===== FOOTER (same on every page) ===== -->
+<footer class="site-footer">
+  <div class="container site-footer__grid">
+    <div>
+      <a class="logo" href="index.html">Your Guesthouse</a>
+      <p class="site-footer__tagline">A small, quiet guesthouse with a garden, a pool and rooms full of light.</p>
+      <!-- TODO: replace the social links with your own profiles (or delete this list) -->
+      <ul class="site-footer__social">
+        <li><a class="footer-link" href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer">Instagram</a></li>
+        <li><a class="footer-link" href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer">Facebook</a></li>
+      </ul>
+    </div>
+
+    <nav aria-label="Footer">
+      <h2>Explore</h2>
+      <ul>
+          <li><a class="footer-link" href="index.html">Home</a></li>
+          <li><a class="footer-link" href="rooms.html">Rooms &amp; Amenities</a></li>
+          <li><a class="footer-link" href="gallery.html">Gallery</a></li>
+          <li><a class="footer-link" href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+
+    <div>
+      <h2>Contact</h2>
+      <address>
+        <span>123 Garden Lane</span>
+        <span>XXXXX Your Town</span>
+        <span>Your Region, Your Country</span>
+      </address>
+      <ul>
+        <li><a class="footer-link" href="mailto:hello@yourguesthouse.com">hello@yourguesthouse.com</a></li>
+        <li><a class="footer-link" href="tel:+000000000000">+00 000 000 0000</a></li>
+        <li><a class="footer-link" href="https://wa.me/000000000001?text=Hello%2C%20I%27d%20like%20to%20check%20availability" target="_blank" rel="noopener noreferrer">WhatsApp</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <h2>Your stay</h2>
+      <dl>
+        <div><dt>Check-in: </dt><dd>From 14:00</dd></div>
+        <div><dt>Check-out: </dt><dd>By 11:00</dd></div>
+        <div><dt>Reception: </dt><dd>Daily, 07:00 – 22:00</dd></div>
+      </dl>
+    </div>
+  </div>
+
+  <div class="site-footer__bottom">
+    <div class="container">
+      <p>© <span data-year>2026</span> Your Guesthouse. All rights reserved.</p>
+      <p><a href="mailto:hello@yourguesthouse.com">Questions? Write to us</a></p>
+    </div>
+  </div>
+</footer>
+
+<!-- ===== FLOATING WHATSAPP BUTTON ===== -->
+<a class="wa-float" href="https://wa.me/000000000001?text=Hello%2C%20I%27d%20like%20to%20check%20availability" target="_blank" rel="noopener noreferrer" aria-label="Chat with us on WhatsApp (opens in a new tab)"><svg class="icon icon--fill" aria-hidden="true" focusable="false"><use href="#i-whatsapp"/></svg></a>
+</body>
+</html>

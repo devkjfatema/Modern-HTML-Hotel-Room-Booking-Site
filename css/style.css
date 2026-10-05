@@ -1,0 +1,1244 @@
+/* ==========================================================================
+   STYLE.CSS - the only stylesheet for all 4 pages.
+
+   HOW TO EDIT
+   - Colours, fonts, radius and spacing live in section 1 (CSS variables).
+     Change a value there and the whole site updates.
+   - Want the green look? Add  data-accent="sage"  to the <html> tag.
+   - Breakpoints used (mobile-first):
+       600px  = tablet   |  1024px = laptop  |  1440px = large desktop
+   ========================================================================== */
+
+/* ==========================================================================
+   1. THEME VARIABLES
+   ========================================================================== */
+:root {
+  --accent: #a4502f;          /* warm terracotta - TODO: replace with your brand colour */
+  --accent-hover: #8a4126;
+  --accent-soft: #f7ece6;     /* very light tint (call-to-action band, icon circles) */
+  --whatsapp: #0e7a43;        /* WhatsApp green, darkened so white text is readable */
+  --whatsapp-hover: #0b6436;
+  --paper: #ffffff;           /* main background */
+  --mist: #f7f7f5;            /* alternating section background */
+  --ink: #1d2320;             /* main text */
+  --muted: #59605b;           /* secondary text */
+  --line: #e7e5df;            /* thin borders */
+  --error: #b42318;
+  --font-serif: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
+  --font-sans: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  --radius: 10px;
+  --radius-lg: 12px;
+  --shadow-soft: 0 1px 2px rgba(20, 24, 22, 0.04), 0 10px 30px rgba(20, 24, 22, 0.07);
+  --ease: cubic-bezier(0.23, 1, 0.32, 1);
+  --header-h: 72px;
+  --kb-duration: 5400ms;      /* hero zoom length - set by js/main.js from the HERO settings */
+}
+
+/* Optional second palette: <html data-accent="sage"> */
+[data-accent='sage'] {
+  --accent: #4f6b52;
+  --accent-hover: #3f5742;
+  --accent-soft: #eef2ec;
+}
+
+/* ==========================================================================
+   2. RESET + BASE
+   ========================================================================== */
+*, *::before, *::after { box-sizing: border-box; }
+* { margin: 0; }
+
+html {
+  scroll-behavior: smooth;               /* smooth scrolling for #anchors */
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: var(--font-sans);
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--ink);
+  background: var(--paper);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+img, svg, iframe { display: block; max-width: 100%; }
+img { height: auto; }
+ul, ol { list-style: none; padding: 0; }
+a { color: inherit; text-decoration: none; }
+button, input, select, textarea { font: inherit; color: inherit; }
+button { background: none; border: 0; padding: 0; cursor: pointer; }
+h1, h2, h3, h4 { font-size: inherit; font-weight: inherit; }
+table { border-collapse: collapse; }
+address { font-style: normal; }
+
+/* Anchored sections stop below the sticky header */
+[id] { scroll-margin-top: calc(var(--header-h) + 16px); }
+
+/* Visible keyboard focus everywhere */
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* Icons: <svg class="icon"><use href="#i-wifi"/></svg>  (symbols are inline at the top of each page) */
+.icon {
+  width: 1.25rem;
+  height: 1.25rem;
+  flex-shrink: 0;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.icon--thin { stroke-width: 1.5; }
+.icon--fill { fill: currentColor; stroke: none; }   /* WhatsApp logo */
+.icon--sm { width: 1rem; height: 1rem; }
+.icon--lg { width: 1.5rem; height: 1.5rem; }
+.icon--accent { color: var(--accent); }
+.icon--muted { color: var(--muted); }
+
+/* Visually hidden but available to screen readers */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Skip link: appears when focused with the keyboard */
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 1rem;
+  z-index: 60;
+  padding: 0.75rem 1rem;
+  border-radius: var(--radius);
+  background: var(--paper);
+  color: var(--ink);
+  font-weight: 500;
+  box-shadow: var(--shadow-soft);
+}
+.skip-link:focus { left: 1rem; }
+
+/* ==========================================================================
+   3. LAYOUT HELPERS
+   ========================================================================== */
+.container {
+  width: 100%;
+  max-width: 1280px;
+  margin-inline: auto;
+  padding-inline: 1.25rem;
+}
+@media (min-width: 600px)  { .container { padding-inline: 2rem; } }
+@media (min-width: 1024px) { .container { padding-inline: 2.5rem; } }
+
+.section { padding-block: clamp(4rem, 8vw, 7rem); }
+.bg-paper { background: var(--paper); }
+.bg-mist  { background: var(--mist); }
+.bg-soft  { background: var(--accent-soft); }
+
+/* Heading + link side by side (stacks on mobile) */
+.section-head {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 1rem;
+}
+@media (min-width: 600px) {
+  .section-head { flex-direction: row; align-items: flex-end; }
+}
+
+/* ==========================================================================
+   4. TYPOGRAPHY
+   ========================================================================== */
+.heading-2 {
+  font-family: var(--font-serif);
+  font-weight: 600;
+  font-size: clamp(2rem, 3.6vw, 3rem);
+  line-height: 1.08;
+  letter-spacing: -0.01em;
+}
+.heading-3 {
+  font-family: var(--font-serif);
+  font-weight: 600;
+  font-size: clamp(1.5rem, 2.2vw, 1.875rem);
+  line-height: 1.15;
+}
+.lead {
+  font-size: clamp(1.0625rem, 1.3vw, 1.1875rem);
+  line-height: 1.7;
+  color: var(--muted);
+}
+.mt-1 { margin-top: 0.25rem; }
+.mt-2 { margin-top: 0.5rem; }
+.mt-3 { margin-top: 0.75rem; }
+.mt-4 { margin-top: 1rem; }
+.mt-6 { margin-top: 1.5rem; }
+.mt-8 { margin-top: 2rem; }
+
+/* ==========================================================================
+   5. BUTTONS + LINKS
+   Use: class="btn btn-accent" | "btn btn-whatsapp" | "btn btn-outline"
+   ========================================================================== */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  min-height: 48px;
+  padding-inline: 1.5rem;
+  border-radius: var(--radius);
+  font-size: 15px;
+  font-weight: 500;
+  white-space: nowrap;
+  transition: background-color 160ms var(--ease), color 160ms var(--ease),
+    border-color 160ms var(--ease), transform 160ms var(--ease), box-shadow 160ms var(--ease);
+}
+.btn:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(20, 24, 22, 0.14); }
+.btn:active { transform: scale(0.97); box-shadow: none; }
+.btn-sm { min-height: 44px; padding-inline: 1rem; font-size: 14px; }
+.btn-sm .icon { width: 1.125rem; height: 1.125rem; color: var(--whatsapp); }
+.btn-accent { background: var(--accent); color: #fff; }
+.btn-accent:hover { background: var(--accent-hover); }
+.btn-whatsapp { background: var(--whatsapp); color: #fff; }
+.btn-whatsapp:hover { background: var(--whatsapp-hover); }
+.btn-outline { background: var(--paper); color: var(--ink); border: 1px solid var(--line); }
+.btn-outline:hover { border-color: var(--ink); }
+.btn-block { width: 100%; }
+@media (min-width: 600px) { .btn-block { width: auto; } }
+
+.btn-row {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+@media (min-width: 600px) { .btn-row { flex-direction: row; } }
+
+.text-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  min-height: 44px;
+  font-weight: 500;
+  color: var(--accent);
+  text-underline-offset: 4px;
+}
+.text-link:hover { text-decoration: underline; }
+
+/* ==========================================================================
+   6. HEADER (sticky on every page)
+   Home: transparent over the hero, turns solid after 60px of scroll
+   (the class "is-solid" is added by js/main.js).
+   ========================================================================== */
+.site-header {
+  position: fixed;
+  inset: 0 0 auto 0;
+  z-index: 50;
+  background: var(--paper);
+  color: var(--ink);
+  box-shadow: 0 1px 0 var(--line), 0 8px 24px rgba(20, 24, 22, 0.06);
+  transition: background-color 200ms ease, box-shadow 200ms ease, color 200ms ease;
+}
+.site-header--home:not(.is-solid) {
+  background: transparent;
+  color: #fff;
+  box-shadow: none;
+}
+.site-header__bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  height: var(--header-h);
+}
+.logo {
+  font-family: var(--font-serif);
+  font-size: 1.625rem;
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: -0.01em;
+  white-space: nowrap;
+}
+
+.main-nav { display: none; }
+.main-nav ul { display: flex; align-items: center; gap: 2rem; }
+.main-nav a {
+  position: relative;
+  display: inline-block;
+  padding-block: 0.5rem;
+  font-size: 15px;
+  font-weight: 500;
+  white-space: nowrap;
+}
+/* underline grows from the left on hover; stays for the current page */
+.main-nav a::after {
+  content: '';
+  position: absolute;
+  inset: auto 0 0 0;
+  height: 1px;
+  background: currentColor;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 300ms var(--ease);
+}
+.main-nav a:hover::after,
+.main-nav a[aria-current='page']::after { transform: scaleX(1); }
+@media (min-width: 1024px) { .main-nav { display: block; } }
+
+.header-actions { display: flex; align-items: center; gap: 0.5rem; }
+.header-actions .btn-accent { display: none; }
+@media (min-width: 600px) { .header-actions .btn-accent { display: inline-flex; } }
+
+.icon-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 9999px;
+  transition: background-color 150ms ease;
+}
+.icon-btn--wa { background: var(--whatsapp); color: #fff; }
+.icon-btn--wa:hover { background: var(--whatsapp-hover); }
+.site-header--home:not(.is-solid) .icon-btn--wa { background: rgba(255, 255, 255, 0.15); }
+.site-header--home:not(.is-solid) .icon-btn--wa:hover { background: rgba(255, 255, 255, 0.25); }
+
+.menu-toggle .icon-close { display: none; }
+.menu-toggle[aria-expanded='true'] .icon-open { display: none; }
+.menu-toggle[aria-expanded='true'] .icon-close { display: block; }
+@media (min-width: 1024px) { .menu-toggle { display: none; } }
+
+/* Mobile menu: full-screen panel under the header. Always in the DOM so aria-controls is valid. */
+.mobile-menu {
+  position: fixed;
+  inset: var(--header-h) 0 0 0;
+  overflow-y: auto;
+  background: var(--paper);
+  color: var(--ink);
+  border-top: 1px solid var(--line);
+  visibility: hidden;
+  opacity: 0;
+  transform: translateY(-8px);
+  transition: opacity 200ms ease-out, transform 200ms ease-out, visibility 200ms;
+}
+.mobile-menu.is-open { visibility: visible; opacity: 1; transform: none; }
+.mobile-menu nav { display: flex; flex-direction: column; min-height: 100%; padding-block: 2rem; }
+.mobile-menu li { border-bottom: 1px solid var(--line); }
+.mobile-menu li a {
+  display: flex;
+  align-items: center;
+  min-height: 64px;
+  font-family: var(--font-serif);
+  font-size: 2rem;
+  font-weight: 600;
+}
+.mobile-menu li a[aria-current='page'] { color: var(--accent); }
+.mobile-menu__actions { display: grid; gap: 0.75rem; margin-top: 2rem; }
+@media (min-width: 600px) { .mobile-menu__actions { grid-template-columns: 1fr 1fr; } }
+.mobile-menu__mail { margin-top: auto; padding-top: 2.5rem; font-size: 14px; color: var(--muted); }
+.mobile-menu__mail a:hover { text-decoration: underline; text-underline-offset: 4px; }
+@media (min-width: 1024px) { .mobile-menu { display: none; } }
+
+/* Every page starts with a photo hero that sits underneath the fixed header */
+main { outline: none; }
+
+/* ==========================================================================
+   7. HOME - HERO SLIDER
+   Photos are stacked. The active one fades in on top while slowly zooming
+   (Ken Burns, scale 1 -> 1.12). Timing is set in js/main.js (HERO block).
+   ========================================================================== */
+@keyframes kenburns {
+  from { transform: scale(1); }
+  to   { transform: scale(1.12); }
+}
+
+.hero {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  height: 100svh;
+  min-height: 560px;
+  overflow: hidden;
+  background: #b9ad9c;     /* shows for a split second before the first photo paints */
+  color: #fff;
+}
+.hero__slides { position: absolute; inset: 0; }
+.hero__slide {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  opacity: 0;
+  z-index: 0;
+}
+.hero__slide.is-prev   { opacity: 1; z-index: 1; }
+.hero__slide.is-active { opacity: 1; z-index: 2; transition: opacity var(--fade, 900ms) ease-in-out; }
+.hero__slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform-origin: var(--origin, 50% 50%);
+}
+.hero__slide.is-active img,
+.hero__slide.is-prev img {
+  will-change: transform;
+  animation: kenburns var(--kb-duration) ease-out forwards;
+}
+.hero.is-paused .hero__slide img { animation-play-state: paused; }
+/* Before the script starts (or if JS is off) the first photo is already visible - no blank flash */
+.hero:not(.is-ready) .hero__slide:first-child { opacity: 1; }
+
+.hero__overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.1) 50%, rgba(0, 0, 0, 0.6));
+}
+.hero__content {
+  position: relative;
+  z-index: 4;
+  display: flex;
+  align-items: flex-end;
+  height: 100%;
+  padding-bottom: 8rem;
+}
+.hero__text { max-width: 42rem; }
+.hero h1 {
+  font-family: var(--font-serif);
+  font-size: clamp(2.75rem, 7vw, 5.5rem);
+  font-weight: 600;
+  line-height: 0.98;
+  letter-spacing: -0.01em;
+}
+.hero__sub {
+  max-width: 32rem;
+  margin-top: 1.25rem;
+  font-size: clamp(1.0625rem, 1.5vw, 1.25rem);
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.9);
+}
+.hero .btn-row { margin-top: 2rem; }
+.hero .btn-accent { padding-inline: 2rem; }
+.hero .btn-whatsapp { padding-inline: 1.75rem; }
+@media (min-width: 600px) { .hero__content { padding-bottom: 9rem; } }
+@media (min-width: 1024px) { .hero__content { align-items: center; padding-bottom: 0; } }
+
+.hero__controls { position: absolute; inset: auto 0 1.25rem 0; z-index: 5; }
+@media (min-width: 600px) { .hero__controls { bottom: 2rem; } }
+.hero__controls .container { display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
+.hero__caption { display: none; font-size: 14px; color: rgba(255, 255, 255, 0.85); }
+@media (min-width: 600px) { .hero__caption { display: block; } }
+.hero__nav { display: flex; align-items: center; gap: 0.25rem; margin-left: auto; }
+.hero__dots { display: flex; align-items: center; }
+.hero__dot {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 44px;
+}
+.hero__dot span {
+  display: block;
+  width: 0.375rem;
+  height: 0.375rem;
+  border-radius: 9999px;
+  background: rgba(255, 255, 255, 0.55);
+  transition: width 300ms ease-out, background-color 300ms ease-out;
+}
+.hero__dot:hover span { background: rgba(255, 255, 255, 0.85); }
+.hero__dot[aria-current='true'] span { width: 1.5rem; background: #fff; }
+.hero__pause {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  margin-left: 0.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 9999px;
+  color: #fff;
+  transition: background-color 150ms ease;
+}
+.hero__pause:hover { background: rgba(255, 255, 255, 0.15); }
+.hero__pause .icon-play { display: none; }
+.hero__pause[aria-pressed='true'] .icon-play { display: block; }
+.hero__pause[aria-pressed='true'] .icon-pause { display: none; }
+.hero :focus-visible { outline-color: #fff; }
+
+/* Home hero when the availability bar sits underneath it */
+.hero--bar { height: calc(100vh - 5rem); height: calc(100svh - 5rem); min-height: 520px; }
+.hero--bar .hero__content { padding-bottom: 9rem; }
+.hero--bar .hero__controls { bottom: 4rem; }
+@media (min-width: 600px) {
+  .hero--bar .hero__content { padding-bottom: 10.5rem; }
+  .hero--bar .hero__controls { bottom: 5.5rem; }
+}
+@media (min-width: 1024px) {
+  .hero--bar { height: calc(100vh - 8.5rem); height: calc(100svh - 8.5rem); min-height: 520px; }
+  .hero--bar .hero__content { padding-bottom: 4rem; }
+}
+
+/* ==========================================================================
+   7b. HOME - AVAILABILITY BAR (floats over the bottom edge of the hero)
+   ========================================================================== */
+.availability { position: relative; z-index: 6; margin-top: -1.5rem; }
+.availability__card {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+  max-width: 1100px;
+  margin-inline: auto;
+  padding: 1rem;
+  border: 1px solid var(--line);
+  border-radius: 24px;
+  background: var(--paper);
+  box-shadow: 0 2px 6px rgba(20, 24, 22, 0.05), 0 24px 60px rgba(20, 24, 22, 0.16);
+}
+.availability__field {
+  min-width: 0;
+  padding: 0.625rem 0.875rem 0.5rem;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background: var(--mist);
+  transition: border-color 150ms ease, box-shadow 150ms ease;
+}
+.availability__field:focus-within { border-color: var(--accent); box-shadow: 0 0 0 3px var(--accent-soft); }
+.availability__field label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 11.5px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+.availability__field .control {
+  min-height: 38px;
+  padding-inline: 0;
+  border: 0;
+  background: transparent;
+  font-size: 16px;
+  font-weight: 500;
+  box-shadow: none;
+}
+.availability__field .control:focus,
+.availability__field .control:hover { border: 0; box-shadow: none; }
+.availability__field--guests,
+.availability__btn,
+.availability__error { grid-column: 1 / -1; }
+.availability__btn { min-height: 56px; border-radius: 16px; font-size: 16px; }
+.availability__error { margin: 0; font-size: 14px; color: var(--error); }
+.availability__error:empty { display: none; }
+.availability + .section { padding-top: calc(clamp(4rem, 8vw, 7rem) + 2rem); }
+@media (min-width: 600px) {
+  .availability__field--guests,
+  .availability__btn { grid-column: auto; }
+  .availability__error { grid-column: 1 / -1; }
+}
+@media (min-width: 1024px) {
+  .availability { margin-top: -4.5rem; }
+  .availability__card { grid-template-columns: 1fr 1fr 1fr 1.05fr; gap: 1rem; padding: 1.25rem; border-radius: 28px; }
+  .availability__btn { min-height: 100%; }
+  .availability + .section { padding-top: calc(clamp(4rem, 8vw, 7rem) + 3rem); }
+}
+
+/* ==========================================================================
+   8. HOME - WELCOME, HIGHLIGHTS, FEATURED ROOMS, GALLERY PREVIEW, CTA BAND
+   ========================================================================== */
+/* Welcome */
+.welcome { display: grid; align-items: center; gap: 3rem; }
+.welcome__img {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  border-radius: var(--radius-lg);
+}
+@media (min-width: 600px) { .welcome__img { aspect-ratio: 5 / 4; } }
+@media (min-width: 1024px) {
+  .welcome { grid-template-columns: repeat(12, 1fr); gap: 4rem; }
+  .welcome__text { grid-column: span 5; }
+  .welcome__media { grid-column: span 7; }
+  .welcome__img { aspect-ratio: 4 / 5; max-height: 680px; }
+}
+
+/* Highlights strip */
+.highlights { border-block: 1px solid var(--line); background: var(--mist); }
+.highlights ul { display: grid; row-gap: 2rem; padding-block: 3rem; }
+.highlights li { display: flex; gap: 1rem; }
+.highlights h3 { font-weight: 500; }
+.highlights p { margin-top: 0.25rem; font-size: 15px; line-height: 1.6; color: var(--muted); }
+.highlights .icon { margin-top: 0.125rem; width: 1.5rem; height: 1.5rem; color: var(--accent); }
+@media (min-width: 600px) { .highlights ul { grid-template-columns: 1fr 1fr; column-gap: 2.5rem; } }
+@media (min-width: 1024px) {
+  .highlights ul { grid-template-columns: repeat(4, 1fr); padding-block: 3.5rem; column-gap: 0; }
+  .highlights li { padding-inline: 2rem; border-left: 1px solid var(--line); }
+  .highlights li:first-child { padding-left: 0; border-left: 0; }
+  .highlights li:last-child { padding-right: 0; }
+}
+
+/* Featured rooms (3 cards) */
+.room-cards { display: grid; gap: 2.5rem; margin-top: 3rem; }
+@media (min-width: 768px) { .room-cards { grid-template-columns: repeat(3, 1fr); gap: 1.5rem; } }
+@media (min-width: 1024px) { .room-cards { gap: 2rem; } }
+.room-card { display: flex; flex-direction: column; height: 100%; }
+.room-card__img-link { display: block; overflow: hidden; border-radius: var(--radius-lg); }
+.room-card__img-link img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  transition: transform 300ms ease-out;
+}
+.room-card:hover .room-card__img-link img { transform: scale(1.03); }
+.room-card h3 { margin-top: 1.25rem; }
+.room-card__summary { margin-top: 0.5rem; font-size: 15px; color: var(--muted); }
+.room-card__meta { display: flex; flex-wrap: wrap; gap: 0.25rem 1.25rem; margin-top: 0.75rem; font-size: 14px; }
+.room-card__meta span { display: inline-flex; align-items: center; gap: 0.375rem; }
+.room-card .text-link { margin-top: auto; padding-top: 0.75rem; }
+
+/* Gallery preview (6 tiles, first one large) */
+.preview-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-auto-rows: 150px;
+  gap: 0.75rem;
+  margin-top: 2.5rem;
+}
+.preview-grid li:nth-child(1) { grid-column: span 2; grid-row: span 2; }
+.preview-grid li:nth-child(6) { grid-column: span 2; }
+.preview-grid a { display: block; height: 100%; overflow: hidden; border-radius: var(--radius-lg); }
+.preview-grid img { width: 100%; height: 100%; object-fit: cover; transition: transform 300ms ease-out; }
+.preview-grid a:hover img { transform: scale(1.04); }
+@media (min-width: 600px) { .preview-grid { grid-auto-rows: 200px; } }
+@media (min-width: 768px) {
+  .preview-grid { grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+  .preview-grid li:nth-child(6) { grid-column: span 1; }
+}
+@media (min-width: 1024px) { .preview-grid { grid-auto-rows: 240px; } }
+
+/* Call-to-action band (light) */
+.cta { background: var(--accent-soft); }
+.cta__inner {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 2rem;
+  padding-block: 4rem;
+}
+.cta__text { max-width: 42rem; }
+.cta .btn-row { width: 100%; }
+@media (min-width: 600px) { .cta .btn-row { width: auto; } }
+@media (min-width: 1024px) {
+  .cta__inner { flex-direction: row; align-items: center; padding-block: 5rem; }
+}
+
+/* ==========================================================================
+   9. PAGE HERO (Rooms, Gallery, Contact) - photo header with breadcrumb
+   The photo drifts slowly while you scroll (js/main.js sets --py) and zooms in once.
+   ========================================================================== */
+@keyframes pagezoom {
+  from { transform: scale(1); }
+  to   { transform: scale(1.06); }
+}
+.page-hero {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  min-height: clamp(340px, 52vh, 560px);
+  overflow: hidden;
+  background: #b9ad9c;
+  color: #fff;
+}
+.page-hero__media {
+  position: absolute;
+  inset: -30% 0 0 0;           /* extra picture above, so the scroll drift never shows a gap */
+  transform: translate3d(0, var(--py, 0px), 0);
+  will-change: transform;
+}
+.page-hero__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  animation: pagezoom 9s ease-out forwards;
+}
+.page-hero__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.12) 45%, rgba(0, 0, 0, 0.6));
+}
+.page-hero__content { position: relative; z-index: 2; padding-top: calc(var(--header-h) + 3rem); padding-bottom: 3rem; }
+@media (min-width: 600px) { .page-hero__content { padding-bottom: 4.5rem; } }
+.breadcrumb ol { display: flex; flex-wrap: wrap; align-items: center; gap: 0.375rem; font-size: 14px; color: var(--muted); }
+.breadcrumb li { display: flex; align-items: center; gap: 0.375rem; }
+.breadcrumb a:hover { text-decoration: underline; text-underline-offset: 4px; }
+.page-hero .breadcrumb ol { color: rgba(255, 255, 255, 0.82); }
+.page-hero .breadcrumb [aria-current='page'],
+.page-hero .breadcrumb a:hover { color: #fff; }
+.page-hero h1 {
+  margin-top: 1.25rem;
+  font-family: var(--font-serif);
+  font-size: clamp(2.5rem, 5.5vw, 4.25rem);
+  font-weight: 600;
+  line-height: 1.03;
+  letter-spacing: -0.01em;
+}
+.page-hero .lead { max-width: 42rem; margin-top: 1rem; color: rgba(255, 255, 255, 0.9); }
+.page-hero :focus-visible { outline-color: #fff; }
+
+/* ==========================================================================
+   10. ROOMS PAGE - room blocks, amenities, rates table, policies
+   ========================================================================== */
+.room-list { display: grid; gap: 5rem; }
+@media (min-width: 1024px) { .room-list { gap: 7rem; } }
+.room-block { display: grid; align-items: center; gap: 2rem; }
+.room-block__img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: var(--radius-lg);
+}
+.room-block__facts { display: flex; flex-wrap: wrap; gap: 0.5rem 1.5rem; margin-top: 1.25rem; font-size: 15px; }
+.room-block__facts div { display: flex; align-items: center; gap: 0.5rem; }
+.room-block__facts dt { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0, 0, 0, 0); }
+.room-block .lead { margin-top: 1.25rem; }
+.feature-list {
+  display: grid;
+  gap: 0.75rem 1.5rem;
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--line);
+}
+.feature-list li { display: flex; align-items: center; gap: 0.75rem; font-size: 15px; }
+.room-block .btn-row { margin-top: 2rem; }
+@media (min-width: 600px) {
+  .feature-list { grid-template-columns: 1fr 1fr; }
+  .room-block .btn-row { align-items: center; }
+}
+@media (min-width: 1024px) {
+  .room-block { grid-template-columns: 1fr 1fr; gap: 4rem; }
+  .room-block--reverse .room-block__media { order: 2; }
+  .room-block--reverse .room-block__text { order: 1; }
+}
+
+/* Amenities */
+.amenities { border-block: 1px solid var(--line); }
+.amenity-grid { display: grid; gap: 2.5rem 2rem; margin-top: 3rem; }
+.amenity-grid li { display: flex; gap: 1rem; padding-top: 1.5rem; border-top: 1px solid var(--line); }
+.amenity-grid h3 { font-weight: 500; }
+.amenity-grid p { margin-top: 0.25rem; font-size: 15px; line-height: 1.6; color: var(--muted); }
+.amenity-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  flex-shrink: 0;
+  border-radius: 9999px;
+  background: var(--paper);
+  color: var(--accent);
+  box-shadow: 0 0 0 1px var(--line);
+}
+@media (min-width: 600px) { .amenity-grid { grid-template-columns: 1fr 1fr; } }
+@media (min-width: 1024px) { .amenity-grid { grid-template-columns: repeat(3, 1fr); } }
+@media (min-width: 1440px) { .amenity-grid { grid-template-columns: repeat(4, 1fr); } }
+
+/* Pricing table: a normal table on tablet/desktop, stacked cards on phones */
+.rates-wrap { margin-top: 2.5rem; }
+@media (min-width: 600px) {
+  .rates-wrap { overflow: hidden; border: 1px solid var(--line); border-radius: var(--radius-lg); }
+}
+.rates-table { width: 100%; font-size: 0.9375rem; }
+.rates-table th,
+.rates-table td { text-align: left; padding: 1rem 1.25rem; border-bottom: 1px solid var(--line); }
+.rates-table thead th { font-size: 0.8125rem; font-weight: 600; color: var(--muted); background: var(--mist); }
+.rates-table tbody tr:last-child th,
+.rates-table tbody tr:last-child td { border-bottom: 0; }
+.rates-table .room-name { font-family: var(--font-serif); font-size: 1.25rem; font-weight: 600; }
+.rates-table .price { font-weight: 500; color: var(--accent); }
+.rates-note { margin-top: 1.25rem; font-size: 15px; color: var(--muted); }
+.rates-table tbody tr { transition: background-color 200ms ease; }
+.rates-table tbody tr:hover { background: var(--mist); }
+.bg-mist .rates-wrap { background: var(--paper); }
+.bg-mist .rates-table tbody tr:hover { background: var(--accent-soft); }
+.rates-table .rates-action { text-align: right; }
+.badge {
+  display: inline-block;
+  margin-left: 0.5rem;
+  padding: 0.2rem 0.6rem;
+  border-radius: 9999px;
+  background: var(--accent-soft);
+  color: var(--accent);
+  font-family: var(--font-sans);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  line-height: 1.4;
+  text-transform: uppercase;
+  vertical-align: middle;
+  white-space: nowrap;
+}
+.bg-mist .badge { background: var(--accent-soft); }
+@media (max-width: 599px) {
+  .rates-table thead { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
+  .rates-table tr {
+    display: block;
+    margin-bottom: 0.875rem;
+    padding: 0.5rem 0;
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    background: var(--paper);
+  }
+  .rates-table th[scope='row'],
+  .rates-table td {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 0.5rem 1rem;
+    border-bottom: 0;
+  }
+  .rates-table th[scope='row'] { padding-top: 0.75rem; }
+  .rates-table td[data-label]::before { content: attr(data-label); color: var(--muted); }
+  .rates-table td.rates-action { display: block; padding: 0.5rem 1rem 0.75rem; text-align: left; }
+  .rates-table td.rates-action .btn { width: 100%; }
+}
+
+/* The home-page rates table has an extra button column, so it turns into cards up to 767px */
+@media (min-width: 600px) and (max-width: 767px) {
+  .rates-wrap { border: 0; border-radius: 0; overflow: visible; }
+  .rates-table thead { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
+  .rates-table tr { display: block; margin-bottom: 0.875rem; padding: 0.5rem 0; border: 1px solid var(--line); border-radius: var(--radius); background: var(--paper); }
+  .rates-table th[scope='row'], .rates-table td { display: flex; justify-content: space-between; gap: 1rem; padding: 0.5rem 1rem; border-bottom: 0; }
+  .rates-table th[scope='row'] { padding-top: 0.75rem; }
+  .rates-table td[data-label]::before { content: attr(data-label); color: var(--muted); }
+  .rates-table td.rates-action { display: block; padding: 0.5rem 1rem 0.75rem; text-align: left; }
+  .rates-table td.rates-action .btn { width: 100%; }
+}
+@media (min-width: 768px) and (max-width: 1023px) {
+  .rates-table th, .rates-table td { padding-inline: 0.75rem; }
+}
+
+/* Good to know */
+.policies { display: grid; gap: 2.5rem; border-top: 1px solid var(--line); }
+.policy-list { display: grid; gap: 2rem 2.5rem; }
+.policy-list div { padding-top: 1.25rem; border-top: 1px solid var(--line); }
+.policy-list dt { font-weight: 500; }
+.policy-list dd { margin-top: 0.5rem; font-size: 15px; line-height: 1.6; color: var(--muted); }
+@media (min-width: 600px) { .policy-list { grid-template-columns: 1fr 1fr; } }
+@media (min-width: 1024px) { .policies { grid-template-columns: 1fr 2fr; gap: 4rem; } }
+
+/* ==========================================================================
+   11. GALLERY PAGE - filter buttons, masonry grid, lightbox
+   ========================================================================== */
+.filters { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+.filter-btn {
+  min-height: 44px;
+  padding-inline: 1.25rem;
+  border: 1px solid var(--line);
+  border-radius: 9999px;
+  background: var(--paper);
+  font-size: 15px;
+  font-weight: 500;
+  transition: border-color 150ms ease, background-color 150ms ease, color 150ms ease;
+}
+.filter-btn:hover { border-color: var(--ink); }
+.filter-btn[aria-pressed='true'] { border-color: var(--ink); background: var(--ink); color: var(--paper); }
+
+/* Masonry with CSS columns: 1 column mobile, 2 tablet, 3 laptop, 4 large desktop */
+.masonry { column-count: 1; column-gap: 1rem; margin-top: 2rem; }
+.masonry li { margin-bottom: 1rem; break-inside: avoid; }
+.masonry li[hidden] { display: none; }
+.masonry button {
+  display: block;
+  width: 100%;
+  overflow: hidden;
+  border-radius: var(--radius-lg);
+  background: var(--mist);
+}
+.masonry img { width: 100%; height: auto; transition: transform 300ms ease-out; }
+.masonry button:hover img { transform: scale(1.04); }
+@media (min-width: 600px)  { .masonry { column-count: 2; } }
+@media (min-width: 1024px) { .masonry { column-count: 3; } }
+@media (min-width: 1440px) { .masonry { column-count: 4; } }
+
+/* Lightbox */
+.lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  background: rgba(255, 255, 255, 0.97);
+  backdrop-filter: blur(4px);
+  opacity: 0;
+  transition: opacity 200ms var(--ease);
+}
+.lightbox[hidden] { display: none; }
+.lightbox.is-open { opacity: 1; }
+.lightbox__top { display: flex; align-items: center; justify-content: space-between; padding: 0.75rem 1rem; }
+.lightbox__count { font-size: 14px; color: var(--muted); }
+.lightbox__stage {
+  position: relative;
+  display: flex;
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+  min-height: 0;
+  padding-inline: 0.75rem;
+}
+.lightbox__img {
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: calc(100vh - 180px);
+  max-height: calc(100svh - 180px);
+  object-fit: contain;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-soft);
+  transition: opacity 180ms var(--ease), transform 180ms var(--ease);
+}
+.lightbox__img.is-changing { opacity: 0; transform: scale(0.98); }
+.lightbox__btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 9999px;
+  background: var(--paper);
+  box-shadow: var(--shadow-soft), 0 0 0 1px var(--line);
+  transition: background-color 150ms ease;
+}
+.lightbox__btn:hover { background: var(--mist); }
+.lightbox__side { display: none; position: absolute; top: 50%; transform: translateY(-50%); }
+.lightbox__side--prev { left: 0.75rem; }
+.lightbox__side--next { right: 0.75rem; }
+.lightbox__bottom { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding: 1rem; }
+.lightbox__caption { text-align: center; font-family: var(--font-serif); font-size: 1.25rem; font-weight: 600; }
+@media (min-width: 600px) {
+  .lightbox__top { padding: 0.75rem 1.5rem; }
+  .lightbox__stage { padding-inline: 5rem; }
+  .lightbox__side { display: inline-flex; }
+  .lightbox__side--prev { left: 1.25rem; }
+  .lightbox__side--next { right: 1.25rem; }
+  .lightbox__bottom { justify-content: center; padding: 1.25rem 1.5rem; }
+  .lightbox__bottom .lightbox__btn { display: none; }
+}
+
+/* ==========================================================================
+   12. CONTACT PAGE
+   ========================================================================== */
+.contact-methods { border-bottom: 1px solid var(--line); }
+.contact-methods ul { display: grid; }
+.contact-methods li { border-top: 1px solid var(--line); }
+.contact-methods li:first-child { border-top: 0; }
+.contact-methods a { display: flex; align-items: flex-start; gap: 1rem; height: 100%; padding-block: 1.75rem; }
+.contact-methods__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  flex-shrink: 0;
+  border-radius: 9999px;
+  background: var(--accent-soft);
+  color: var(--accent);
+}
+.contact-methods small { display: block; font-size: 14px; color: var(--muted); }
+.contact-methods strong { display: block; margin-top: 0.125rem; font-weight: 500; overflow-wrap: anywhere; text-underline-offset: 4px; }
+.contact-methods a:hover strong { text-decoration: underline; }
+@media (min-width: 600px) {
+  .contact-methods ul { grid-template-columns: 1fr 1fr; }
+  .contact-methods li:nth-child(2) { border-top: 0; }
+  .contact-methods li:nth-child(even) { padding-left: 1.5rem; }
+}
+@media (min-width: 1024px) {
+  .contact-methods ul { grid-template-columns: repeat(4, 1fr); }
+  .contact-methods li { border-top: 0; border-left: 1px solid var(--line); padding-inline: 1.5rem; }
+  .contact-methods li:first-child { border-left: 0; padding-left: 0; }
+}
+
+.contact-layout { display: grid; gap: 3rem; }
+@media (min-width: 1024px) { .contact-layout { grid-template-columns: 1.6fr 1fr; gap: 4rem; } }
+.hours { padding-top: 0; }
+@media (min-width: 1024px) { .hours { padding-top: 2.5rem; } }
+.hours dl { margin-top: 1.5rem; border-block: 1px solid var(--line); }
+.hours dl div { display: flex; justify-content: space-between; gap: 1rem; padding-block: 1rem; font-size: 15px; }
+.hours dl div + div { border-top: 1px solid var(--line); }
+.hours dt { color: var(--muted); }
+.hours dd { text-align: right; font-weight: 500; }
+.hours p { margin-top: 1.5rem; font-size: 15px; line-height: 1.6; color: var(--muted); }
+
+/* Booking form */
+.booking {
+  padding: 1.5rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  background: var(--paper);
+  box-shadow: var(--shadow-soft);
+}
+@media (min-width: 600px) { .booking { padding: 2.5rem; } }
+.booking__intro { margin-top: 0.5rem; font-size: 15px; color: var(--muted); }
+.booking form { display: grid; gap: 0.5rem 1.25rem; margin-top: 2rem; }
+@media (min-width: 600px) {
+  .booking form { grid-template-columns: 1fr 1fr; }
+  .booking .span-2 { grid-column: span 2; }
+}
+.field label { display: block; font-size: 14px; font-weight: 500; }
+.field label span { font-weight: 400; color: var(--muted); }
+.field__control { margin-top: 0.5rem; }
+.control {
+  display: block;
+  width: 100%;
+  min-height: 48px;
+  padding-inline: 1rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--paper);
+  font-size: 15px;
+  transition: border-color 150ms ease, box-shadow 150ms ease;
+}
+textarea.control { padding-block: 0.75rem; resize: vertical; }
+.control::placeholder { color: var(--muted); }
+.control:hover { border-color: #c9c6bd; }
+.control:focus { outline: none; border-color: var(--accent); box-shadow: 0 0 0 3px var(--accent-soft); }
+.control[aria-invalid='true'] { border-color: var(--error); }
+.control[aria-invalid='true']:focus { box-shadow: 0 0 0 3px rgba(180, 35, 24, 0.2); }
+.field__error { min-height: 1.25rem; margin-top: 0.375rem; font-size: 14px; color: var(--error); }
+.booking__result {
+  margin-top: 1.5rem;
+  padding: 1.25rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--mist);
+}
+.booking__result[hidden] { display: none; }
+.booking__result p { display: flex; align-items: center; gap: 0.5rem; font-weight: 500; }
+.booking__result p .icon { color: var(--whatsapp); }
+.booking__result .btn-row { margin-top: 1rem; }
+
+/* Map */
+.map-frame {
+  aspect-ratio: 4 / 3;
+  margin-top: 2rem;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  background: var(--mist);
+}
+.map-frame iframe { width: 100%; height: 100%; border: 0; }
+@media (min-width: 600px) { .map-frame { aspect-ratio: 16 / 7; } }
+
+/* Booking form note shown when the dates come from the home-page bar */
+.booking__prefill {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  margin-top: 1rem;
+  padding: 0.75rem 1rem;
+  border-radius: var(--radius);
+  background: var(--accent-soft);
+  font-size: 14px;
+  line-height: 1.5;
+}
+.booking__prefill[hidden] { display: none; }
+.booking__prefill .icon { margin-top: 0.125rem; color: var(--accent); }
+
+/* ==========================================================================
+   12b. HOME - AMENITIES CAROUSEL (scroll-snap, swipe + arrow buttons)
+   ========================================================================== */
+.carousel__arrows { display: flex; gap: 0.5rem; }
+.carousel__btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border: 1px solid var(--line);
+  border-radius: 9999px;
+  background: var(--paper);
+  transition: border-color 150ms ease, opacity 150ms ease, transform 150ms ease;
+}
+.carousel__btn:hover:not(:disabled) { border-color: var(--ink); }
+.carousel__btn:active:not(:disabled) { transform: scale(0.95); }
+.carousel__btn:disabled { opacity: 0.35; cursor: default; }
+.carousel__track {
+  display: flex;
+  gap: 1rem;
+  margin: 1rem -0.25rem 0;
+  padding: 0.75rem 0.25rem 1.75rem;
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+}
+.carousel__track::-webkit-scrollbar { display: none; }
+.amenity-card { flex: 0 0 auto; width: clamp(200px, 68vw, 250px); scroll-snap-align: start; }
+.amenity-card__inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  padding: 2rem 1rem 1.75rem;
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  background: var(--paper);
+  text-align: center;
+  transition: transform 300ms var(--ease), box-shadow 300ms var(--ease), border-color 300ms var(--ease);
+}
+.amenity-card:hover .amenity-card__inner { transform: translateY(-6px); border-color: transparent; box-shadow: var(--shadow-soft); }
+.amenity-card__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 4rem;
+  height: 4rem;
+  border-radius: 9999px;
+  background: var(--accent-soft);
+  color: var(--accent);
+}
+.amenity-card h3 {
+  margin-top: 1.25rem;
+  font-family: var(--font-serif);
+  font-size: 1.3rem;
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+.amenity-card__line { display: block; width: 2.5rem; height: 2px; margin-top: 1rem; background: var(--accent); transition: width 300ms var(--ease); }
+.amenity-card:hover .amenity-card__line { width: 3.5rem; }
+.carousel__track:focus-visible { outline-offset: 2px; border-radius: 12px; }
+
+/* ==========================================================================
+   12c. SCROLL ANIMATIONS
+   Elements with data-reveal start hidden and fade up when they scroll into view
+   (js/main.js adds the class "is-visible"). Only opacity + transform are animated.
+   The hidden start state only exists when JavaScript is on (html.js).
+   ========================================================================== */
+html.js [data-reveal] {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 700ms var(--ease), transform 700ms var(--ease);
+  transition-delay: var(--d, 0ms);
+}
+html.js [data-reveal].is-visible { opacity: 1; transform: none; }
+html.js .availability[data-reveal]:not(.is-visible) { transform: translateY(40px); }
+/* Safety net: if main.js never runs, show everything after 2 seconds */
+@keyframes reveal-failsafe { to { opacity: 1; transform: none; } }
+html.js:not(.reveal-ready) [data-reveal] { animation: reveal-failsafe 0.01s 2s forwards; }
+
+/* Little accent line under section headings that draws itself */
+.heading--line::after {
+  content: '';
+  display: block;
+  width: 0;
+  height: 2px;
+  margin-top: 0.875rem;
+  background: var(--accent);
+  transition: width 800ms var(--ease) 350ms;
+}
+.heading--line.is-visible::after,
+html:not(.js) .heading--line::after { width: 48px; }
+
+/* ==========================================================================
+   13. FOOTER (light)
+   ========================================================================== */
+.site-footer { border-top: 1px solid var(--line); background: var(--mist); }
+.site-footer__grid { display: grid; gap: 2.5rem; padding-block: 3.5rem; }
+.site-footer .logo { display: inline-block; font-size: 1.75rem; }
+.site-footer__tagline { max-width: 20rem; margin-top: 1rem; font-size: 15px; line-height: 1.6; color: var(--muted); }
+.site-footer h2 { font-size: 14px; font-weight: 600; }
+.site-footer ul { margin-top: 0.75rem; font-size: 15px; }
+.site-footer__social { display: flex; gap: 1.25rem; margin-top: 1.25rem; }
+.site-footer address { margin-top: 0.75rem; font-size: 15px; line-height: 1.6; color: var(--muted); }
+.site-footer address span { display: block; }
+.footer-link { display: inline-flex; align-items: center; min-height: 36px; color: var(--muted); transition: color 150ms ease; }
+.footer-link:hover { color: var(--ink); }
+.site-footer dl { margin-top: 0.75rem; font-size: 15px; color: var(--muted); }
+.site-footer dl div + div { margin-top: 0.5rem; }
+.site-footer dt { display: inline; color: var(--ink); }
+.site-footer dd { display: inline; }
+.site-footer__bottom { border-top: 1px solid var(--line); }
+.site-footer__bottom .container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  padding-top: 1.5rem;
+  padding-bottom: 7rem;      /* keeps the floating WhatsApp button clear on phones */
+  font-size: 14px;
+  color: var(--muted);
+}
+.site-footer__bottom a:hover { text-decoration: underline; text-underline-offset: 4px; }
+@media (min-width: 600px) {
+  .site-footer__grid { grid-template-columns: 1fr 1fr; }
+  .site-footer__bottom .container { flex-direction: row; justify-content: space-between; padding-bottom: 1.5rem; }
+}
+@media (min-width: 1024px) {
+  .site-footer__grid { grid-template-columns: 1.5fr 1fr 1.2fr 1fr; padding-block: 5rem; }
+}
+
+/* ==========================================================================
+   14. FLOATING WHATSAPP BUTTON (every page)
+   ========================================================================== */
+@keyframes wa-pulse {
+  0%   { transform: scale(1);   opacity: 0.45; }
+  100% { transform: scale(1.7); opacity: 0; }
+}
+.wa-float {
+  position: fixed;
+  right: 1.25rem;
+  bottom: 1.25rem;
+  z-index: 40;
+  isolation: isolate;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  border-radius: 9999px;
+  background: var(--whatsapp);
+  color: #fff;
+  box-shadow: var(--shadow-soft);
+  transition: background-color 150ms ease, transform 150ms ease;
+}
+.wa-float:hover { background: var(--whatsapp-hover); }
+.wa-float:active { transform: scale(0.95); }
+.wa-float .icon { width: 1.75rem; height: 1.75rem; }
+.wa-float::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  border-radius: 9999px;
+  background: var(--whatsapp);
+  animation: wa-pulse 2.4s ease-out infinite;
+}
+@media (min-width: 600px) { .wa-float { right: 1.5rem; bottom: 1.5rem; } }
+
+/* ==========================================================================
+   15. REDUCED MOTION - no smooth scroll, no pulse, no zoom
+   ========================================================================== */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .wa-float::before { display: none; }
+  .hero__slide img { animation: none !important; }   /* no zoom */
+  html.js [data-reveal] { opacity: 1; transform: none; transition: none; }
+  .heading--line::after { width: 48px; transition: none; }
+  .page-hero__img { animation: none; }
+  .page-hero__media { transform: none !important; }
+  .btn:hover, .amenity-card:hover .amenity-card__inner { transform: none; }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
